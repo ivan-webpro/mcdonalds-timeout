@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Helvetica-5-Normal';
+  src: url('Helvetica-5-Normal.eot');
+  src: url('Helvetica-5-Normal.eot?#iefix') format('embedded-opentype'),
+       url('Helvetica-5-Normal.woff2') format('woff2'),
+       url('Helvetica-5-Normal.woff') format('woff'),
+       url('Helvetica-5-Normal.ttf') format('truetype'),
+       url('Helvetica-5-Normal.svg#Helvetica-5-Normal') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica-6-Medium';
+  src: url('Helvetica-6-Medium.eot');
+  src: url('Helvetica-6-Medium.eot?#iefix') format('embedded-opentype'),
+       url('Helvetica-6-Medium.woff2') format('woff2'),
+       url('Helvetica-6-Medium.woff') format('woff'),
+       url('Helvetica-6-Medium.ttf') format('truetype'),
+       url('Helvetica-6-Medium.svg#Helvetica-6-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica-7-Bold';
+  src: url('Helvetica-7-Bold.eot');
+  src: url('Helvetica-7-Bold.eot?#iefix') format('embedded-opentype'),
+       url('Helvetica-7-Bold.woff2') format('woff2'),
+       url('Helvetica-7-Bold.woff') format('woff'),
+       url('Helvetica-7-Bold.ttf') format('truetype'),
+       url('Helvetica-7-Bold.svg#Helvetica-7-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'SchistBold';
+  src: url('Schist Bold.eot');
+  src: url('Schist Bold.eot?#iefix') format('embedded-opentype'),
+       url('SchistBold.woff') format('woff'),
+       url('Schist Bold.woff2') format('woff2'),
+       url('SchistBold.ttf') format('truetype'),
+       url('SchistBold.svg#SchistBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SchistBlack';
+  src: url('Schist Black.eot');
+  src: url('Schist Black.eot?#iefix') format('embedded-opentype'),
+       url('SchistBlack.woff') format('woff'),
+       url('Schist Black.woff2') format('woff2'),
+       url('SchistBlack.ttf') format('truetype'),
+       url('SchistBlack.svg#SchistBlack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SegoeScript';
+  src: url('segoesc.eot');
+  src: url('segoesc.eot?#iefix') format('embedded-opentype'),
+       url('SegoeScript.woff') format('woff'),
+       url('segoesc.woff2') format('woff2'),
+       url('SegoeScript.ttf') format('truetype'),
+       url('SegoeScript.svg#SegoeScript') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

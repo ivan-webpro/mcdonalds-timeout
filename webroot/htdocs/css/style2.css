@@ -1,0 +1,175 @@
+.story .like, .story .author, .story h4, .story .text {
+    cursor: pointer;
+}
+.user form textarea {
+    color: black;
+}
+
+.user .text {
+    min-height: 220px;
+}
+.profileIn {
+  height: 59px;
+  width: 277px;
+  padding: 0;
+  margin-top: -10px;
+  border: none;
+  background: none;
+  background: url(../img/buttons/profile.png) no-repeat center;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%; }
+  .profileIn:hover {
+    background: url(../img/buttons/profile_hover.png) no-repeat center;
+  background-size: 100%;}
+  .user_page .avatar .exit {
+    width: 113px;
+    max-width: 100%;
+    height: 40px;
+    display: block;
+    margin: 30px auto 0;
+    background: url(../img/buttons/exit.png) no-repeat center;
+    background-size: 100%; }
+    .user_page .avatar .exit:hover, .user_page .avatar .exit:focus, .user_page .avatar .exit:active {
+      background: url(../img/buttons/exit_hover.png) no-repeat center;
+      background-size: 100%; }
+    
+    
+.modal_2 .modal-dialog, .modal_3 .modal-dialog  {
+width: 650px;
+max-width: 100%; }
+.modal_2 .text .sub_title, .modal_3 .text .sub_title {
+font-family: "SchistBold"; }
+.modal_2 .text p, .modal_3 .text p {
+font-family: "Helvetica-5-Normal";
+font-size: 14px;
+text-transform: none;
+line-height: 1.7; }
+
+video { width: 100%; }
+
+#userform label a { color: white; text-decoration: underline; }
+
+.modal {
+    top: 0 !important;
+    text-align: center;
+}
+.modal:before { /* для IE8+ */
+  content: "";
+  display: inline-block;
+  min-height: inherit;
+  height: 100%;
+  vertical-align: middle;
+}
+.modal .modal-dialog {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar-default .navbar-nav > li:nth-child(3).active a {
+  background: url(../img/HeadBT_2.png) no-repeat center !important; background-size: 100%; }
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.block_1 {margin-top: 0; }
+
+.burger-container {
+    top: 0 !important;
+    text-align: center;
+    position: fixed;
+    height: 100%;
+    left: 3%;
+}
+.burger-container:before { /* для IE8+ */
+  content: "";
+  display: inline-block;
+  min-height: inherit;
+  height: 100%;
+  vertical-align: middle;
+}
+.burger-container .burger {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.load_photo_text { font-size: 10px; color: red; margin-bottom: 20px; display: inline-block; }
+.load_photo_text.active { color: green; }
+#myImage {
+    width: 200px; height: 200px;
+    border: 1px solid gray;
+    background-color: black !important;
+    text-align: center;
+    margin: 0 auto;
+}
+
+footer { height: 0; }
+
+.modal-dialog2 {
+    height: 10000px;
+    max-height: 90%;
+}
+.modal-content2 {
+    height: 100%;
+}
+.modal-content-container {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.twitter-typeahead, #usercity {
+    width: 100%;
+}
+.twitter-typeahead .tt-menu {
+    color: #878788;
+    font-size: 12px;
+    background: white;
+    width: 100%;
+    border: 1px solid #878788;
+    border-radius: 5px;
+    padding: 5px;
+    top: 40px !important;
+}
+.tt-suggestion {
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+}
+.tt-suggestion:hover {
+    background-color: #eee;
+    color: black;
+}
+#the-basics3 .twitter-typeahead .tt-menu {
+    top: 100% !important;
+}
+#the-basics2 .twitter-typeahead .tt-menu {
+    top: 70px !important;
+}
+#the-basics3 {
+    width: 340px;
+    float: right;
+    cursor: pointer;
+}
+#the-basics2 {
+    width: 340px;
+    margin: 0 auto;
+    cursor: pointer !important;
+}
+#the-basics3 input, #the-basics2 input {
+    cursor: pointer;
+}
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+@media only screen and (max-width : 1024px) {
+.search { width: 300px; }
+#the-basics3, #the-basics2 { width: 300px;}
+}
+.slide .social_2 { margin-top: 10px; }
+
+@media only screen and (max-width : 479px) {
+    .h_l { display: none; }
+}

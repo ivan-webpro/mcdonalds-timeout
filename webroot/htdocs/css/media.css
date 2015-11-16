@@ -1,0 +1,346 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1280px) {
+.container{max-width: 100%;}
+.navbar {width: 100%;}
+.social{right: 5%; top:25%;}
+.burger{left: 3%;top: 3%;}
+.rules {padding: 20px 0;}
+.navbar {margin-bottom: 55px;}
+.border_bg {display: none;}
+.question {background: none;margin-bottom: 20px;padding-top: 0;}
+.town_photo .img {width: 100%; padding-left: 5%; padding-right: 5%;}
+.town_photo img {max-width: 90%;}
+.orange .title h2 {font-size: 40px;}
+.town_photo  .img {}
+.orange .feedback .text {font-size: 16px;}
+.orange .feedback input, .orange .feedback textarea {font-size: 12px;}
+.story {max-width: 100%;}
+.story .scores span {font-size: 24px;}
+.story .scores span img {width: 25px;}
+.story h4 {font-size: 18px;}
+.question {padding: 5px 20px 0px 10px;}
+}
+@media only screen and (min-width : 1024px) {
+.visible-lg {display: block !important;}
+//.burger{top: 0;}
+.hidden-lg {display: none !important;}
+.tags_filtr li {margin: 0;font-size: 16px;}
+.orange .feedback p {font-size: 13px;}
+.user_page .scores_2 span img {margin: 0 15px;}
+.user_page .scores-2 span {font-size: 50px;}
+.block_12 .title .visible-lg{display: none !important;}
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+.border_bg {display: none !important;}
+.orange #Burger_Full {margin-right: -25px;}
+.orange .feedback .participate {position: static;}
+.container { max-width: 100%;}
+.story {max-width: 320px;width: 100%;}
+.h_search {margin-bottom: 50px;float: none;}
+.logIn {width: 220px;}
+.tags_filtr{margin-top: 30px;margin-left: -15px;}
+.story .scores span{font-size: 24px;}
+.story .name, .story .like {width: 24%;}
+.story .scores {width: 49%;}
+.story h4 {font-size: 18px;}
+.story h4 img {max-width: 50px;}
+.social, .burger-container { display: none; }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+.navbar-brand,.navbar-toggle {
+	display: inline-block; 
+	float: none;
+	vertical-align: middle;
+	z-index: 200;
+}
+.user_page .avatar { width: 200px; }
+.visible-768 {display: block !important;}
+.navbar-brand{padding-top: 1px;}
+.cmn-toggle-switch {
+  position: relative;
+  left: -40px;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+  text-indent: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+          transition: background 0.3s;
+}
+
+.cmn-toggle-switch:focus {
+  outline: none;
+}
+
+.cmn-toggle-switch span {
+  display: block;
+  position: absolute;
+  top: 9px;
+  left: 0px;
+  right: 0px;
+  height: 3px;
+  background: url(../img/Menu.png);
+}
+
+.cmn-toggle-switch span::before,
+.cmn-toggle-switch span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: url(../img/Menu.png);
+  content: "";
+}
+
+.cmn-toggle-switch span::before {
+  top: -6px;
+}
+
+.cmn-toggle-switch span::after {
+  bottom: -6px;
+}
+.cmn-toggle-switch__htx {
+  background-color: transparent;
+}
+
+.cmn-toggle-switch__htx span {
+  -webkit-transition: background 0 0.3s;
+          transition: background 0 0.3s;
+}
+
+.cmn-toggle-switch__htx span::before,
+.cmn-toggle-switch__htx span::after {
+  -webkit-transition-duration: 0.3s, 0.3s;
+          transition-duration: 0.3s, 0.3s;
+  -webkit-transition-delay: 0.3s, 0;
+          transition-delay: 0.3s, 0;
+}
+
+.cmn-toggle-switch__htx span::before {
+  -webkit-transition-property: top, -webkit-transform;
+          transition-property: top, transform;
+}
+
+.cmn-toggle-switch__htx span::after {
+  -webkit-transition-property: bottom, -webkit-transform;
+          transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.cmn-toggle-switch__htx.active {
+  background-color: transparent;
+}
+
+.cmn-toggle-switch__htx.active span {
+  background: none;
+}
+
+.cmn-toggle-switch__htx.active span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.cmn-toggle-switch__htx.active span::after {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.cmn-toggle-switch__htx.active span::before,
+.cmn-toggle-switch__htx.active span::after {
+  -webkit-transition-delay: 0, 0.3s;
+          transition-delay: 0, 0.3s;
+}
+
+.navbar-toggle img{
+	margin-right: 5px;
+}
+.navbar-header {
+        float: none;
+    }
+.social,.burger, .burger-container {display: none;}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background: none;
+}
+.navbar-nav {
+    position: fixed;
+    top: -10px;
+    left: 0;
+    width: 105%;
+    height: 100%;
+    padding-top: 30%;
+    background: #000;
+    opacity: 0.8;
+    z-index: 150;
+}
+.navbar-nav > li {
+    display: block;
+    width: 100%;
+    margin: 10px 0
+}
+.navbar-nav > li .scores {margin-top: 60px;}
+.answer {}
+.author{padding: 15px;}
+.block_8 .title p, .orange .title p {font-size: 16px;}
+.orange .title h2 {font-size: 30px;}
+.orange .title .sub_title {font-size: 20px;}
+.town_title {max-width: 96%;}
+.tags_filtr li:first-child{display: none;}
+.tags_filtr li{margin-right: 0;}
+.border {margin: 0;}
+.storys_page .navbar {margin-bottom: 10px;}
+.user_page .scores_2 span {font-size: 40px;}
+.user_page .scores_2 span img {width: 30px; margin: 0 10px;}
+.user_page .scores_2 p img {max-width: 25%;}
+.user_page .scores_2 p {font-size: 18px;}
+.award {margin-top: -110px;}
+.user_page .social_2 {margin-bottom: 50px; text-align: left}
+.attantion img {margin-left: 0; margin-right: 20px;}
+.user_page .award p {font-size: 20px;}
+.product .title h2 {text-align: center;}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 580px) {
+section{padding-top: 50px;}
+.navbar{margin: 0;}
+.navbar-brand{padding-left: 0;}
+.block_1 {padding-top: 30px;}
+.title {line-height: 1.5;}
+.title h2 {font-size: 20px; line-height: 1.5;}
+.title p {font-size: 14px;}
+.icons {width: 35%;}
+.icons:nth-child(2n) {max-width: 15%;}
+.icons:nth-child(4) {display: none;}
+.icons span{font-size: 10px;}
+.participate {width: 220px;}
+.social_2 li {margin-right: 10px;}
+.town_photo {min-height: 320px;}
+.town_title{
+	max-width: 90%;
+	padding-top: 20px;
+    font-size: 18px;
+}
+.town_title img {
+    margin: 0 10px;
+    width: 25px;
+}
+.town_photo  img {}
+.block_12 .title h2 {font-size: 30px;}
+.block_12 .title .sub_title, .orange .title .sub_title,.scores p {font-size: 18px;}
+.block_12 .title p, .orange .title p {font-size: 12px; margin-top: 20px;}
+.scores span img {margin: 0 15px;}
+.scores span {font-size: 48px;}
+.burger12 img,.orange #Burger_Full {max-width: 70%;}
+.orange .burger_fade,.form_fade {text-align: center;}
+.orange .feedback p {font-size: 13px;}
+.orange .title {margin-bottom: 15px;}
+.orange .feedback .participate {margin: 0 auto 30px;}
+.orange #Burger_Full {
+    margin: auto;
+}
+.orange .feedback input, .orange .feedback textarea{max-width: 100%;}
+.modal .modal-dialog {width: 300px;margin: 60px auto 0;}
+.modal .modal-title {font-size: 24px;}
+.modal .modal-content p,.modal .sub_title {font-size: 14px;}
+.modal-body {padding-top: 10px;}
+.modal .scores span {font-size: 40px;}
+.modal .scores span img {width: 25px;}
+.modal .modal-content p img {width: 30px;}
+.storys_page,.user_page,.product  {padding-top: 20px;}
+.border {border: none;margin: 0;}
+.avatar {margin-top: 30px;text-align: center;}
+.attantion {margin-bottom: 50px;}
+.user_page .title { font-size: 24px;text-align: center;}
+.user_page_2 .user .text {width: 100%;}
+.user_page .social_2{text-align: center;}
+.award {margin-top: 0px;}
+.product .tabs_burger .burger {margin-right: 0;}
+.product .tabs_burger .slider-for .descr p {font-size: 14px;}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 360px) {
+.rules{    border-width: 20px;}
+.town_photo {min-height: 280px;}
+.town_title{
+    background: url(../img/Ribbon_320.png) no-repeat center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+
+.question .q_text{font-size: 18px;}
+.visible-xxs {display: block;}
+.town_screen {
+    padding-top: 0px;
+}
+.burger12 img,.orange #Burger_Full {max-width: 100%;}
+.orange .title h2 span{
+	display: block;
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+.orange .title h2{font-size: 20px;}
+.orange .title .sub_title{font-size: 17px;margin-top: 30px;}
+.h_l{display: none;}
+.storys_page .logIn{margin: auto}
+.storys_page .title {text-align: center;}
+.tags_filtr li:first-child{display: block;}
+.tags_filtr li {font-size: 14px;}
+.tags_filtr li a{padding: 10px;}
+.h_search {margin-bottom: 20px;max-width: 100%;}
+.story .scores {width: 47%;}
+.story .scores span img{width: 20px;}
+footer span{padding-top: 15px;}
+.orange .feedback input, .orange .feedback textarea{max-width: 100%;}
+.user_page .text form {width: 100%;}
+.avatar {text-align: center;}
+.user_page .social_2 {text-align: center;}
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+.visible-xxs{display: none !important;}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 770px) {
+.navbar-collapse {display: block !important;}
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1280px) {
+.container { width: 1340px; max-width: 100%}
+.navbar-brand {display: none;}
+}

@@ -1,0 +1,917 @@
+body
+	color: #FFF
+	font-size: 16px
+	
+section
+	position: relative
+	display: block
+	width: 100%
+	min-height: 100vh
+	margin-bottom: -20px
+	padding-top: 100px
+	background: url(../img/background.png) no-repeat center
+	background-size: cover
+.navbar
+	width: 70%
+	top: 0
+	margin: 25px auto 85px
+	text-align: center
+	border: none
+	
+.navbar-nav > li 
+	float: none
+	&:nth-child(2)
+		a
+			margin-right: 13%
+.navbar-default .navbar-nav 
+	> li
+		a
+			font-family: 'Helvetica-7-Bold'
+			color: #FFF
+			font-size: 18px
+			text-transform: uppercase
+			letter-spacing: 1px
+			&:hover,
+			&:active,
+			&:focus
+				color: #FFF
+				background-color: transparent
+				background: url(../img/HeadBT.png) no-repeat center
+		&:nth-child(3)
+			a
+				&:hover,
+				&:active,
+				&:focus
+					background: url(../img/HeadBT_2.png) no-repeat center !important
+	.active a, .active a:hover, .active a:focus,
+	.active:last-child a, .active:last-child a:hover, .active:last-child a:focus, .active:last-child a:active
+		/* style */
+		color: #FFF
+		background-color: transparent
+		background: url(../img/HeadBT.png) no-repeat center
+.navbar-brand
+	font-family: 'Helvetica-7-Bold'
+	font-size: 20px
+	text-transform: uppercase
+	color: #FFF !important
+.block_1,.storys_page
+	padding-top: 0	
+.title
+	h2
+		margin: 0 0 10px
+		font-family: 'SchistBlack'
+		text-transform: uppercase
+		font-size: 40px
+		letter-spacing: 1px
+	.sub_title
+		font-size: 20px
+		font-family: 'Helvetica-7-Bold'
+	p
+		font-family: 'Helvetica-5-Normal'
+		line-height: 1.5
+		padding: 0 30px
+.block_1_bg, .border_bg
+	width: 100%
+	min-height: 100vh
+	position: absolute
+	top: 0
+	background: url(../img/block_1_bg.png) no-repeat center
+	-webkit-background-size: 100%
+	-moz-background-size: 100%
+	background-size: 100%
+	z-index: 0 !important
+.block_1
+	margin-top: -20px
+.rules
+	margin-top: 2% 
+	margin-bottom: 2%
+	padding: 70px 0
+.icons
+	display: inline-block
+	vertical-align: top
+	width: 20%
+	img
+		display: block
+		margin: 0 auto 20px
+	span
+		font-family: 'SegoeScript'
+		text-transform: uppercase
+		font-size: 15px
+		
+	&:nth-child(2n)
+		max-width: 3%
+		padding-top: 15px
+	&:nth-child(5)
+		span
+			margin: 0 -20px
+			display: block
+.block_1
+	.participate
+		margin: 2% auto
+.participate,.more
+	width: 320px
+	height: 73px
+	background: url(../img/buttons/BT.png) no-repeat center
+	-webkit-background-size: 100%
+	-moz-background-size: 100%
+	background-size: 100% !important
+	cursor: pointer
+	&:hover,
+	&:focus
+		background: url(../img/buttons/Bt_last_2.png) no-repeat center
+.participate
+	margin-bottom: 30px
+.scroll_down
+	margin: 2% auto 4%	
+.social
+	position: fixed
+	top: 30%
+	right: 5%	
+	z-index: 100
+	li
+		list-style: none
+	a
+		width: 45px
+		height: 50px
+		display: block
+		margin: 20px 0
+		background: url(../img/social.png) no-repeat 
+	#vk
+		background-position: top
+	#fb
+		background-position: -3px -58px
+	#ok
+		background-position: -3px -117px
+	#tw
+		background-position: -3px -177px
+.border_bg 
+	background-image: url(../img/Frame.png)
+	background-size: 98%
+.town_screen
+	padding-top: 50px
+
+.town_photo
+	text-align: center
+	min-height: 515px
+	position: relative
+	>img
+		margin: auto
+		position: absolute
+		bottom: 95px
+		left: 50%
+		transform: translate(-50%, 0)
+.town_title
+	position: absolute
+	width: 100%
+	bottom: 0
+	padding: 35px 0 0px
+	margin-top: -70px
+	margin-bottom: 30px
+	text-align: center
+	color: #ffa800
+	font-family: 'SchistBold'
+	text-transform: uppercase
+	font-size: 36px
+	line-height: 2
+	background: url(../img/Ribbon.png) no-repeat center
+	-webkit-background-size: 100%
+	-moz-background-size: 100%
+	background-size: 100%
+	img
+		margin: 0 20px
+		width: auto
+.author
+	img
+		max-width: 100%
+.esse
+	span,.info
+		text-transform: capitalize
+		font-size: 24px
+		font-family: 'SchistBlack'
+	.info
+		font-size: 18px
+	p
+		margin-top: 30px
+		font-size: 14px
+		font-family: 'Helvetica-5-Normal'
+		line-height: 1.5
+.question
+	padding: 25px 20px 0px 30px
+	margin-bottom: 30px
+	border: 15px solid transparent
+	-moz-border-image: url(../img/question_border.png) 15 round round
+	-webkit-border-image: url(../img/question_border.png) 15 round round
+	-o-border-image: url(../img/question_border.png) 15 round round
+	border-image: url(../img/question_border.png) 15 round round
+	.q_text
+		font-size: 24px
+		font-family: 'SchistBlack'
+
+.checkbox 
+	vertical-align: top
+	margin: 0 3px 0 0
+	width: 30px
+	height: 30px
+
+
+
+.checkbox + label 
+	cursor: pointer
+	font-family: 'Helvetica-6-Medium'
+	font-size: 14px
+
+.checkbox:not(checked) 
+	position: absolute
+	opacity: 0
+
+.checkbox:not(checked) + label 
+	position: relative 
+	padding: 15px 0 0 40px 
+
+.checkbox:not(checked) + label:before 
+	content: ''
+	position: absolute
+	top: 0px
+	left: 0
+	width: 30px
+	height: 30px
+	border-radius: 13px
+
+
+.checkbox:not(checked) + label:after 
+	content: ''
+	position: absolute
+	top: 0px
+	left: 0px
+	width: 36px
+	height: 30px
+	background: url(../img/Radio.png) no-repeat center bottom
+	
+
+.checkbox:checked + label:after 
+	background: url(../img/RadioActive.png) no-repeat right 2px 
+.form_fade 
+	.checkbox:not(checked) + label:after 
+		background: url(../img/Radio_2.png) no-repeat center bottom
+	.checkbox:checked + label:after 
+		background: url(../img/RadioActive_2.png) no-repeat right 2px 
+	.checkbox + label
+		margin: -20px 0 40px 0
+.answer
+	width: 140px
+	height: 35px
+	display: block
+	margin: 30px auto -30px
+	background: url(../img/buttons/BT_Send.png) no-repeat center
+	background-size: 100%
+	-webkit-transition: .1s
+	-moz-transition: .1s
+	-ms-transition: .1s
+	-o-transition: .1s
+	transition: .1s
+	
+	&:hover
+		background: url(../img/buttons/BT_Send_Hover.png) no-repeat center
+
+.block_12, .orange
+	.title
+		h2
+			font-size: 48px
+		.sub_title
+			font-family: 'SchistBlack'
+			font-size: 26px
+			text-transform: uppercase
+			letter-spacing: 1px
+		p
+			margin-top: 40px
+			font-size: 20px
+			font-family: 'Helvetica-7-Bold'
+			padding: 0
+.scores
+	margin-bottom: 30px
+	p
+		margin: 5px 0
+		font-family: 'SchistBold'
+		font-size: 24px
+		letter-spacing: 1px
+		text-transform: uppercase
+	img
+		display: inline-block
+		vertical-align: middle
+		margin: 0 5px
+	span
+		color: #ffa800
+		font-size: 60px
+		line-height: 1
+		font-family: 'SchistBlack'
+		img
+			margin: 0 25px	
+.burger12
+	padding-bottom: 80px
+.orange 
+	background: url(../img/Orange_bg.png) no-repeat
+	background-size: cover 
+	z-index: 200
+	.title
+		margin-bottom: 60px
+	.burger_fade 
+		padding-right: 30px
+	#Burger_Full
+		margin: 30px 0px 0 0
+		max-width: 100%
+	.feedback
+		.text
+			margin-bottom: 30px
+			font-size: 20px
+			font-family: 'Helvetica-7-Bold'
+			line-height: 1.5
+		input, textarea
+			width: 100%
+			border: none
+			margin-bottom: 20px
+			text-indent: 5px
+			padding: 10px 5px
+			color: #878788
+			-webkit-border-radius: 3px
+			-moz-border-radius: 3px
+			border-radius: 3px
+		input
+			height: 40px
+			font-size: 14px
+			font-family: 'Helvetica-5-Normal'
+		p
+			margin-top: 0
+			font-size: 14px
+			line-height: 1.5
+		.right_block
+			position: relative
+			min-height: 325px
+		.load_photo
+			width: 195px
+			height: 37px
+			margin: 10px 0 30px
+			background: url(../img/buttons/LoadPhoto_2.png) no-repeat center top
+			-webkit-background-size: 100%
+			-moz-background-size: 100%
+			background-size: 100%
+			&:hover,
+			&:focus
+				/* style */
+				background: url(../img/buttons/LoadPhotoHover_2.png) no-repeat top center
+		.participate
+			position: absolute
+			bottom: 0
+			right: 0
+			width: 240px
+			height: 65px
+			background: url(../img/buttons/Bt_last.png) no-repeat center top
+			&:hover,
+			&:focus
+				/* style */
+				background: url(../img/buttons/Bt_last_hover.png) no-repeat top center
+				width: 244px
+.social_2
+	ul
+		padding: 5px 0 0 0
+	li
+		display: inline-block
+		margin-right: 20px
+		&:last-child
+			margin-right: 0
+	a
+		display: block
+		width: 40px
+		height: 43px
+		background: url(../img/social_2.png) no-repeat
+	#vk_2
+		background-position: left 0
+	#fb_2
+		background-position: -63px 0
+	#ok_2
+		background-position: -125px 0
+	#tw_2
+		background-position: -185px 0
+	#gl
+		background-position: -248px 0
+footer
+	z-index: 200
+	margin-top: 20px
+	span, ul
+		font-family: 'Helvetica-5-Normal'
+		display: inline-block
+		vertical-align: middle
+		color: #323232
+	ul
+		margin: 5px 0 0 20px
+.burger
+	position: fixed
+	top: 15%
+	left: 3%
+	ul
+		padding: 0
+	li
+		margin-top: 7px
+	.scores
+		margin-top: 40px
+	p
+		font-size: 20px
+		&:first-child
+			font-family: 'SegoeScript'
+			text-transform: capitalize
+			
+	span
+		font-size: 46px
+.i2
+	display: none
+	bottom: 0
+.db
+	display: block !important
+	position: relative
+	bottom: -20px
+	
+.l1 .i2
+	z-index: -10
+.l2 .i2
+	z-index: -9
+.l3 .i2
+	z-index: -8
+.l4 .i2
+	z-index: -7
+.l5 .i2
+	z-index: -6
+.l6 .i2
+	z-index: -5
+.l7 .i2
+	z-index: -4
+.l8 .i2
+	z-index: -3
+.l9 .i2
+	z-index: -2
+.l10 .i2
+	z-index: 0
+
+.modal
+	.modal-content
+		border: 30px solid transparent
+		-moz-border-image: url(../img/modal_bd.png) 30 round round
+		-webkit-border-image: url(../img/modal_bd.png) 30 round round
+		-o-border-image: url(../img/modal_bd.png) 30 round round
+		border-image: url(../img/modal_bd.png) 30 round round
+.modal	
+	top: 10%
+	.modal-content
+		position: relative
+		color: #323232 
+		text-transform: uppercase
+		text-align: center
+		-webkit-background-size: 100%
+		-moz-background-size: 100%
+		background-size: 100%
+		box-shadow: none
+		p
+			color: #323232
+			font-size: 20px
+	.modal-dialog
+		width: 425px
+		max-width: 100%
+	.close
+		opacity: 1
+		position: absolute
+		top: -45px
+		right: -45px
+	.modal-title
+		font-family: 'SchistBlack'
+		font-size: 30px
+		img
+			margin-right: 15px
+	.sub_title
+		font-size: 18px
+		font-family: 'SchistBlack'
+		margin: 20px 0 10px
+	.modal-header
+		border: none
+		padding: 0 0
+	input, textarea
+		width: 100%
+		border: 1px solid #878788
+		border-radius: 3px
+		margin-bottom: 20px
+		text-indent: 5px
+		padding: 10px 5px
+		color: #878788
+		-webkit-border-radius: 3px
+		-moz-border-radius: 3px
+		border-radius: 3px
+	input[type="file"]
+		border: none
+		
+	input
+		height: 40px
+		font-size: 14px
+		font-family: 'Helvetica-5-Normal'
+	.send
+		border: none
+		background: none
+	.social_2
+		margin-top: 30px
+		span
+			font-size: 24px
+			text-transform: none
+			margin-bottom: 40px
+			font-family: "SchistBlack"
+.modal_3,.modal_4
+	.modal-title
+		font-size: 24px
+		text-transform: none
+		margin-bottom: 40px
+	.forgot
+		text-transform: none
+		font-size: 12px
+		color: #323232
+		font-family: 'Helvetica-5-Normal'
+		text-decoration: underline
+	.checkbox + label
+		font-size: 12px
+		margin-left: -40px
+		text-align: left
+.modal_5
+	p
+		font-family: 'Helvetica-5-Normal'
+		text-transform: none
+		line-height: 1.7
+		font-size: 18px
+		
+		span
+			color: red
+.modal_6
+	.modal-dialog
+		width: 650px
+		max-width: 100%
+	.text
+		.sub_title
+			font-family: 'SchistBold'
+		p
+			font-family: 'Helvetica-5-Normal'
+			font-size: 14px
+			text-transform: none
+			line-height: 1.7
+			
+				
+.tags_filtr
+	margin-top: 50px
+	padding: 0
+	li
+		display: inline-block
+		margin-right: 10px
+		font-family: 'Helvetica-6-Medium'
+		font-size: 18px
+		a
+			color: #FFF
+			padding: 10px 17px
+			font-family: 'Helvetica-6-Medium'
+			text-decoration: none
+			&:hover
+				background: url(../img/HeadBT.png) no-repeat center
+				-webkit-background-size: 100%
+				-moz-background-size: 100%
+				background-size: 100%
+		&:nth-child(3)
+			a:hover
+				background: url(../img/bd-1.png) no-repeat center
+		&:nth-child(4)
+			a:hover
+				background: url(../img/bd-2.png) no-repeat center
+.search
+	margin-top: 30px
+	float: right
+	padding: 4px 10px
+	width: 340px
+	height: 40px
+	color: #878788
+	font-size: 13px
+	background: #FFFFFF url(../img/search.png) no-repeat 97%
+	border-radius: 2px
+	border: none
+.logIn
+	height: 57px
+	width: 280px
+	padding: 0
+	margin-top: -10px
+	border: none
+	background: none
+	background: url(../img/buttons/login_bd.png) no-repeat center
+	-webkit-background-size: 100%
+	-moz-background-size: 100%
+	background-size: 100%
+	
+	&:hover
+		background: url(../img/buttons/login_hover.png) no-repeat center
+.storys_page
+	padding-bottom: 50px
+	background-attachment: fixed
+	.navbar
+		margin-bottom: 30px
+.story
+	width: 420px
+	min-height: 500px
+	height: 500px
+	display: inline-block
+	padding: 10px
+	margin: 80px 0 20px
+	-webkit-box-shadow: 1px 1px 10px #000000
+	-moz-box-shadow: 1px 1px 10px #000000
+	box-shadow: 1px 1px 10px #000000
+	.author
+		display: block
+		margin: -58px auto 0
+	.name,.scores,.like
+		display: inline-block
+	.scores
+		width: 40%
+		margin-top: 15px
+		span
+			font-size: 29px
+			color: #FFF
+			img
+				width: 30px
+				margin: 0 7px
+		p
+			font-size: 14px
+	.name,.like
+		width: 28%
+	.name
+		font-family: 'SchistBlack'
+		font-size: 18px
+	.like,.social_2 span
+		font-family: 'SchistBold'
+		text-transform: uppercase
+		font-size: 14px
+		img
+			vertical-align: bottom
+	h4
+		font-family: 'SchistBold'
+		font-size: 24px
+		text-transform: uppercase
+		img
+			margin-top: 8px
+			width: 23%
+		img,span
+			display: inline-block
+			vertical-align: middle
+		span
+			width: 50%
+	.text
+		text-align: left
+		min-height: 180px
+		margin-bottom: 10px
+		-moz-border-image: url(../img/line_7.png) 5 round round
+		-webkit-border-image: url(../img/line_7.png) 5 round round
+		-o-border-image: url(../img/line_7.png) 5 round round
+		border-image: url(../img/line_7.png) 5 round round
+		border-top: 0
+
+		p
+			font-size: 14px
+			font-family: 'Helvetica-5-Normal'
+			line-height: 1.7
+		img
+			max-width: 100%
+	.social_2
+		span,ul
+			display: inline-block
+			vertical-align: middle
+			margin: 0 10px
+		span
+			margin-top: 5px
+		li
+			margin-right: 10px
+			a
+				width: 25px
+				height: 25px
+				background: url(../img/social_3.png) no-repeat
+			#fb_3
+				background-position: left 0
+			#vk_3
+				background-position: -33px 0
+			#ok_3
+				background-position: -66px 0
+			#tw_3
+				background-position: -101px 0
+
+.color_1
+	background: #4c67d0		
+.color_2
+	background: #9ba917
+.color_3
+	background: #01a0db	
+.color_4
+	background: #f1455d	
+.color_5
+	background: #b751ca	
+.color_6
+	background: #ac8f62	
+.color_7
+	background: #f1970a	
+.color_8
+	background: #f96132	
+.color_9
+	background: #ac8f62	
+.more
+	margin-top: 30px
+	max-width: 100%
+	background-image: url(../img/buttons/more.png)
+	&:hover,&:focus,&:active
+		background-image: url(../img/buttons/more.png)
+.border,.rules
+	border: 30px solid transparent
+	padding-top: 30px
+	padding-bottom: 50px
+	-moz-border-image: url(../img/Frame_2.png) 43 round round
+	-webkit-border-image: url(../img/Frame_2.png) 43 round round
+	-o-border-image: url(../img/Frame_2.png) 43 round round
+	border-image: url(../img/Frame_2.png) 43 round round
+.town_screen
+	padding: 20px
+	.border
+		margin: 0
+		padding-bottom: 0
+.border 
+	margin: 20px
+
+.user_page
+	padding-top: 0
+	padding-bottom: 60px
+	.avatar
+		p
+			font-size: 14px
+			font-family: 'Helvetica-5-Normal'
+			line-height: 1.7
+		.upload
+			width: 200px
+			max-width: 100%	
+			height: 40px
+			display: block
+			margin: 30px auto 0
+			background: url(../img/buttons/LoadPhoto.png) no-repeat center
+			background-size: 100% 
+			&:hover, &:focus,&:active
+				background: url(../img/buttons/LoadPhotoHover.png) no-repeat center
+				background-size: 100% 
+				
+	img
+		max-width: 100%
+	.title
+		font-size: 40px
+		font-family: 'SchistBlack'
+		text-transform: uppercase
+		margin-top: 30px
+	.user
+		.name
+			font-family: 'SchistBlack'
+			font-size: 26px
+			text-transform: uppercase
+			margin-top: 60px
+		.town
+			font-family: "SchistBold"
+			font-size: 24px
+			letter-spacing: 1px
+			color: #ffa800
+			line-height: 2
+			span
+				color: #FFF
+		.text
+			p,span
+				font-family: 'Helvetica-7-Bold'
+				font-size: 18px
+				line-height: 1.5
+
+			form
+				width: 75%
+				padding-bottom: 100px
+				margin-bottom: 50px
+			textarea
+				width: 100%
+				font-size: 14px
+				font-family: 'Helvetica-5-Normal'
+				line-height: 1.7
+				border: none
+				padding: 10px
+			.send
+				width: 230px
+				max-width: 100%	
+				height: 60px
+				display: block
+				float: right
+				margin: 30px 0 0
+				background: url(../img/buttons/BT_Send_2.png) no-repeat center
+				background-size: 100% 
+				&:hover, &:focus,&:active
+					background: url(../img/buttons/SendHover.png) no-repeat center
+					background-size: 100% 
+	.social_2
+		margin-top: 20px
+		ul
+			margin-top: 30px
+		span
+			font-family: 'Helvetica-7-Bold'
+			font-size: 14px
+	.award
+		p
+			font-family: "SchistBold"
+			font-size: 24px
+			letter-spacing: 1px
+			text-transform: uppercase
+			span
+				color: #ffa800
+.user_page_2
+	.user
+		.text
+			padding-top: 30px
+			width: 80%
+			p
+				margin-top: 20px
+				font-size: 14px
+				font-family: 'Helvetica-5-Normal'
+.attantion
+	img
+		float: left
+		margin-left: -70px
+	p
+		color: #ef4647
+		font-family: 'Helvetica-7-Bold'
+.product
+	padding-top: 0
+	.title
+		span
+			font-family: 'Helvetica-7-Bold'
+			font-size: 20px
+			display: block
+			margin-top: 70px
+	.tabs_burger
+		.burger
+			position: static
+			margin-right: -30px
+			display: block !important
+			
+			span
+				font-size: 20px
+				font-family: 'Helvetica-7-Bold'
+			ul
+				margin: 30px 0 50px
+			.slick-slide
+				display: block
+				margin-bottom: 8px
+				img
+					max-width: 100% !important
+				.i2
+					display: none
+				&:hover
+					.i1
+						display: none
+					.i2
+						display: block
+
+				.part
+					width: 100% !important
+					img
+						position: absolute
+						top: 0
+						z-index: 0
+				&:first-child
+					.descr
+						opacity: 1
+		.slider-for
+			margin-top: 20px
+			.descr
+				span
+					color: #ffa800
+					font-size: 16px
+					text-transform: uppercase
+					font-family: 'Helvetica-7-Bold'
+				p
+					margin-top: 20px
+					font-size: 16px
+					line-height: 1.7
+					font-family: 'Helvetica-5-Normal'
+				.line
+					width: 100%
+	.right_block
+		img
+			max-width: 100%
+		.title
+			font-family: "SchistBold"
+			font-size: 26px
+			letter-spacing: 1px
+			text-transform: uppercase
+		.btn
+			width: 230px
+			height: 55px
+			display: block
+			margin: 50px auto
+			background: url(../img/buttons/BT_2.png) no-repeat center
+			-webkit-background-size: 100%
+			-moz-background-size: 100%
+			background-size: 100%
+			&:hover,&:focus
+				background: url(../img/buttons/BT_2_hover.png) no-repeat center
+			
