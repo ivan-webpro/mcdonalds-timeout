@@ -51,5 +51,9 @@ document.write('<img src="http://ad.adriver.ru/cgi-bin/rle.cgi?' + 'sid=1&ad=550
 
 </script>
 <?php endif; ?>
+
+</div>
+<div class="screen-small">
+</div>
 </body>
 </html>

@@ -63,7 +63,16 @@ $(document).ready(function(){
             window.history.pushState({}, null, "/#"+last_id);
         }
         $("html,body").animate({scrollTop: $('.slide:last').offset().top});
+	$(".start").hide();
         burger_trigger();
+    });
+    $('#modal_2').on('show.bs.modal', function (e) {
+	burger_trigger();
+	$('#modal_2').scrollTop = 0;
+    });
+    $('#modal_3').on('show.bs.modal', function (e) {
+	burger_trigger();
+	$('#modal_3').scrollTop = 0;
     });
     $('#modal_2').on('hide.bs.modal', function (e) {
         var last_id = $('.slide:last').attr("id")
@@ -78,7 +87,10 @@ $(document).ready(function(){
             $(".slide").eq(-2).hide();
         }
         
-        burger_trigger();
+        burger_trigger1();
+	if (typeof block12_trigger !== 'undefined') {
+		$("html,body").animate({scrollTop: $('.orange').offset().top});
+	}
     });
     $('#modal_3').on('hide.bs.modal', function (e) {
         var last_id = $('.slide:last').attr("id");
@@ -93,24 +105,32 @@ $(document).ready(function(){
             $(".slide").eq(-2).hide();
         }
 
-        burger_trigger();
+        burger_trigger1();
+	if (typeof block12_trigger !== 'undefined') {
+		$("html,body").animate({scrollTop: $('.orange').offset().top});
+	}
     });
 });
 
 
 function load_next_slide(q) {
     var aa = 0;
-    if (q !== "q0") {
+    if (q !== "q0") {2004
         var a = $("input[name="+q+"]:checked").val();
-        console.log("a = "+a);
         if (typeof a !== "undefined") {
             aa = a;
         } else {
             return false;
         }
-        console.log("aa = "+a);
     }
-    $.get('/ajax/load-next-slide.php', {a: aa}, function(data) {
+console.log("Номер ответа: "+aa);
+    $.ajax({
+	url: '/ajax/load-next-slide.php',
+	data:  {'a': aa},
+	beforeSend: function() { console.log('Начинаем запрос данных');
+	},
+    }).done(function(data) {
+	console.log(data);
         var obj = $.parseJSON(data);
         if (!obj.error) {
             if (aa != 0) {    
@@ -140,5 +160,20 @@ function load_next_slide(q) {
                 }
             }
         }
-    });
+    })
+	.fail(AjaxError)
+	.always(function() {console.log("запрос завершён");});
 }
+
+function AjaxError(x, e) {
+  if (x.status == 0) {
+    console.log(' Check Your Network.');
+  } else if (x.status == 404) {
+    console.log('Requested URL not found.');
+  } else if (x.status == 500) {
+    console.log('Internel Server Error.');
+  }  else {
+     console.log('Unknow Error.\n' + x.responseText);
+  }
+}
+

@@ -26,8 +26,8 @@
 
 <div class="modal fade modal_2" id="modal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog2">
-        <div class="modal-content modal-content2">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="img/close.png" alt=""></button>
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="img/close.png" alt=""></button>        
+	<div class="modal-content modal-content2">
             <div class="modal-content-container">
                 <div class="modal-header">
                     <h4 class="modal-title" id="myModalLabel">Поздравляем!</h4>
@@ -49,8 +49,8 @@
 
 <div class="modal fade modal_3" id="modal_3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog2">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="img/close.png" alt=""></button>
         <div class="modal-content modal-content2">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="img/close.png" alt=""></button>
             <div class="modal-content-container">
                 <div class="modal-header">
                     <h4 class="modal-title" id="myModalLabel">Увы!</h4>

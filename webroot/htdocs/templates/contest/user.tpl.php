@@ -1,6 +1,6 @@
 <?php
 //$html_metas[] = '<meta property="og:title" content="Мой родной город — '.$city1.'" />';
-$html_metas[] = '<meta property="og:title" content="Меняем факт на съедобный приз!" />';
+$html_metas[] = '<meta property="og:title" content="Узнай интересный факт о городе" />';
 $html_metas[] = '<meta property="og:url" content="http://mcdonalds.timeout.ru/contest.php?user='.$id1.'" />';
 $html_metas[] = '<meta property="og:type" content="website" />';
 $html_metas[] = '<meta property="og:image" content="http://mcdonalds.timeout.ru/upload/social/ok/'.$cityid1.'.jpg" />';
@@ -9,8 +9,8 @@ $html_metas[] = '<meta property="og:image:width" content="548" />';
 $html_metas[] = '<meta property="og:image:height" content="343" />';
 //$html_metas[] = '<meta property="og:description" content="'.$moderated1.'" />';
 //$html_metas[] = '<meta name="description" content="'.$moderated1.'">';
-$html_metas[] = '<meta property="og:description" content="Ответь на вопросы викторины, поделись фактом о любимом городе и выиграй бесплатный обед в «Макдоналдс» для тебя и твоих друзей." />';
-$html_metas[] = '<meta name="description" content="Ответь на вопросы викторины, поделись фактом о любимом городе и выиграй бесплатный обед в «Макдоналдс» для тебя и твоих друзей.">';
+$html_metas[] = '<meta property="og:description" content="Прими участие в конкурсе - напиши свой факт, копи баллы и выиграй Apple Watch или обед в «Макдонадлс»." />';
+$html_metas[] = '<meta name="description" content="Прими участие в конкурсе - напиши свой факт, копи баллы и выиграй Apple Watch или обед в «Макдонадлс».">';
 
 if (session_id() == '') session_start();
 ?>
@@ -37,7 +37,9 @@ if (!file_exists(__DIR__.'/../../'.$pic)) {
             </div>            
             <div class="col-md-4 col-sm-8">
                 <div class="name text-left"><?=$name1?></div>
-
+<?php if ($status1 === 2) : ?>
+                <div class="like text-right" userid="<?=$id1?>">лайк &nbsp;<img src="img/Like.png" alt=""></div>
+<?php endif; ?>
                 <div class="town"><span>Город:</span> <?=$city1?></div>
                 
 <?php if (isset($_SESSION['login']) && isset($_SESSION['login']['id']) && $_SESSION['login']['id'] == $id1) : ?>
@@ -61,10 +63,18 @@ if (!file_exists(__DIR__.'/../../'.$pic)) {
                     </form>
                 </div>
 <?php endif; ?>
+<?php else : ?>
+<?php if (!empty($text1) && $status1 == 2) : ?>                
+                <div class="text">
+                        <span>Интересный факт о вашем городе:</span>
+                        <p><?=$text1?></p>
+                </div>
+<?php endif; ?>
 <?php endif; ?>
             </div>
             <div class="col-md-5 col-md-offset-1 col-sm-12 text-center">
                     <div class="row">
+<?php if ($status1 === 2) : ?>
                         <div class="col-md-12 col-sm-6">
                             <div class="award">
                                 <img src="img/Award.png" alt="">
@@ -87,7 +97,7 @@ if (!file_exists(__DIR__.'/../../'.$pic)) {
                         <div class="col-md-12 col-sm-6">
                             <div class="social_2">
 <?php if (isset($_SESSION['login']) && isset($_SESSION['login']['id']) && $_SESSION['login']['id'] == $id1) : ?>
-                                <span>Рассказывате о проекте друзьям 
+                                <span>Рассказывайте о проекте друзьям 
                                 <br>на своих страницах в социальных сетях. <br>Каждый шеринг добавит вам 20 баллов!</span>
                                 <ul>
                                     <li><a href="" id="fb_2" class="fb-share" userid="<?=$id1?>" cityid="<?=$cityid1?>"></a></li>
@@ -96,7 +106,7 @@ if (!file_exists(__DIR__.'/../../'.$pic)) {
                                     <li><a href="" id="tw_2" class="tw-share" userid="<?=$id1?>" cityid="<?=$cityid1?>" text1="<?=$moderated1?>"></a></li>
                                 </ul>
 <?php else : ?>
-                                <span>Рассказывате о проекте друзьям 
+                                <span>Рассказывайте о проекте друзьям 
                                 <br>на своих страницах в социальных сетях.</span>
                                 <ul>
                                     <li><a href="" id="fb_2" class="fb-globalshare"></a></li>
@@ -106,8 +116,8 @@ if (!file_exists(__DIR__.'/../../'.$pic)) {
                                 </ul>
 <?php endif; ?>
                             </div>
-                        </div>
-
+	                </div>
+<?php endif; ?>
                 </div>
             </div>
         </div>
@@ -129,7 +139,8 @@ $query = "SELECT `user`.`id` as `id`"
         . " + COALESCE((SELECT SUM(`points`) FROM `like` WHERE `user_id` = `user`.`id`),0)) as `points`"
         . " FROM `user`"
         . " LEFT JOIN  `city` ON  `city`.`id` =  `user`.`city`"
-        . " WHERE `user`.`id` != '%s' AND `user`.`city` = '%s'";
+        . " WHERE `user`.`id` != '%s' AND `user`.`city` = '%s'"
+	. " AND `user`.`status` = 2";
 $query .= " ORDER BY `points` DESC";
 $query = sprintf($query,
         mysql_real_escape_string($id1),
@@ -165,7 +176,8 @@ if ($count == 0) {
             . " + COALESCE((SELECT SUM(`points`) FROM `like` WHERE `user_id` = `user`.`id`),0)) as `points`"
             . " FROM `user`"
             . " LEFT JOIN  `city` ON  `city`.`id` =  `user`.`city`"
-            . " WHERE `user`.`id` != '%s'";
+            . " WHERE `user`.`id` != '%s'"
+		. " AND `user`.`status` = 2";
     $query .= " ORDER BY `points` DESC";
     $query = sprintf($query,
             mysql_real_escape_string($id1));

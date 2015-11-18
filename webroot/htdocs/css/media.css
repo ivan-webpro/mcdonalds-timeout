@@ -3,11 +3,16 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1280px) {
 .container{max-width: 100%;}
-.navbar {width: 100%;}
+.navbar {width: 80%;}
+.navbar-default .navbar-nav > li:nth-child(3) a {
+  margin-right: 0px; white-space: nowrap;}
+.navbar-nav > li:nth-child(2) a {
+  margin-right: 0; margin-left: 15%;
+}
 .social{right: 5%; top:25%;}
 .burger{left: 3%;top: 3%;}
 .rules {padding: 20px 0;}
-.navbar {margin-bottom: 55px;}
+.navbar {margin-bottom: 35px;}
 .border_bg {display: none;}
 .question {background: none;margin-bottom: 20px;padding-top: 0;}
 .town_photo .img {width: 100%; padding-left: 5%; padding-right: 5%;}
@@ -20,7 +25,10 @@
 .story .scores span {font-size: 24px;}
 .story .scores span img {width: 25px;}
 .story h4 {font-size: 18px;}
-.question {padding: 5px 20px 0px 10px;}
+.question {padding: 5px 10px 0px 15px;}
+.search, .btn_search,.btn_search img {max-height: 35px;}
+.btn_search {bottom: -35px;}
+.prizes h2 {margin-left: 55px;}
 }
 @media only screen and (min-width : 1024px) {
 .visible-lg {display: block !important;}
@@ -31,15 +39,24 @@
 .user_page .scores_2 span img {margin: 0 15px;}
 .user_page .scores-2 span {font-size: 50px;}
 .block_12 .title .visible-lg{display: none !important;}
+.prizes .places {font-size: 18px;}
+.prizes h2 {margin-left: 25px;}
+}
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+.author img {max-width: 150%;}
+.navbar {width: 90%;}
 }
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+.navbar-default .navbar-nav > li:nth-child(3) a{margin-right: 0;}
 .border_bg {display: none !important;}
 .orange #Burger_Full {margin-right: -25px;}
 .orange .feedback .participate {position: static;}
 .container { max-width: 100%;}
 .story {max-width: 320px;width: 100%;}
-.h_search {margin-bottom: 50px;float: none;}
+.h_search {height: 35px; max-height: 35px;margin-bottom: 50px;float: none; width: 100%;}
+.h_btn_search {height: 35px; max-height: 35px; bottom: -35px; }
+.h_btn_search img {height: 35px; max-height: 35px;}
 .logIn {width: 220px;}
 .tags_filtr{margin-top: 30px;margin-left: -15px;}
 .story .scores span{font-size: 24px;}
@@ -48,6 +65,8 @@
 .story h4 {font-size: 18px;}
 .story h4 img {max-width: 50px;}
 .social, .burger-container { display: none; }
+.prizes .places {font-size: 18px;}
+.prizes img {max-width: 60px;}
 }
 
 /* Small Devices, Tablets */
@@ -58,15 +77,18 @@
 	vertical-align: middle;
 	z-index: 200;
 }
+.navbar-nav > li:nth-child(2) a {
+  margin-right: 0; margin-left: 0;
+}
 .user_page .avatar { width: 200px; }
 .visible-768 {display: block !important;}
 .navbar-brand{padding-top: 1px;}
 .cmn-toggle-switch {
   position: relative;
-  left: -40px;
+  left: 0px;
   margin: 0;
   padding: 0;
-  width: 20px;
+  width: 100px;
   height: 20px;
   font-size: 0;
   text-indent: 15px;
@@ -91,6 +113,7 @@
   top: 9px;
   left: 0px;
   right: 0px;
+  width: 20px;
   height: 3px;
   background: url(../img/Menu.png);
 }
@@ -100,7 +123,7 @@
   position: absolute;
   display: block;
   left: 0;
-  width: 100%;
+  width: 20px;
   height: 3px;
   background: url(../img/Menu.png);
   content: "";
@@ -197,6 +220,7 @@
     margin: 10px 0
 }
 .navbar-nav > li .scores {margin-top: 60px;}
+.block_1_bg {background: none;}
 .answer {}
 .author{padding: 15px;}
 .block_8 .title p, .orange .title p {font-size: 16px;}
@@ -221,7 +245,7 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 580px) {
 section{padding-top: 50px;}
-.navbar{margin: 0;}
+.navbar{margin: 0; width: 100%;}
 .navbar-brand{padding-left: 0;}
 .block_1 {padding-top: 30px;}
 .title {line-height: 1.5;}
@@ -275,6 +299,12 @@ section{padding-top: 50px;}
 .award {margin-top: 0px;}
 .product .tabs_burger .burger {margin-right: 0;}
 .product .tabs_burger .slider-for .descr p {font-size: 14px;}
+.places_1 {text-align: left !important;}
+.prizes .places {font-size: 12px; margin: 0;}
+.prizes img {max-width: 40px;}
+.prizes .places_2{margin-top: 18px;}
+#the-basics2 {width: 250px; left: -30px;}
+.btn_search {right: -75px;}
 }
 
 /* Custom, iPhone Retina */
@@ -343,4 +373,47 @@ footer span{padding-top: 15px;}
 @media only screen and (min-width : 1280px) {
 .container { width: 1340px; max-width: 100%}
 .navbar-brand {display: none;}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+ .modal-body{
+  background: #FFFFFF;
+  margin: 0 -2px -4px 0;
+}
+.modal-header{
+  background: #FFFFFF;
+  margin: -2px -4px 0 0;
+}
+.l1 .i2 {
+  z-index: 1; }
+
+.l2 .i2 {
+  z-index: 2; }
+
+.l3 .i2 {
+  z-index: 3; }
+
+.l4 .i2 {
+  z-index: 4; }
+
+.l5 .i2 {
+  z-index: 5; }
+
+.l6 .i2 {
+  z-index: 6; }
+
+.l7 .i2 {
+  z-index: 7; }
+
+.l8 .i2 {
+  z-index: 8; }
+
+.l9 .i2 {
+  z-index: 9; }
+
+.l10 .i2 {
+  z-index: 10; }
+.orange .feedback .load_photo:active {box-shadow: none !important;}
+
+
 }

@@ -1,3 +1,46 @@
+function burger_trigger1() {
+    if ($('.trigger_1').is(':visible')) {
+        $('.l1 .i1').addClass('hidden');
+        $('.l1 .i2').addClass('db');
+    }
+    if ($('.trigger_2').is(':visible')) {
+        $('.l2 .i1').addClass('hidden');
+        $('.l2 .i2').addClass('db');
+    }
+    if ($('.trigger_3').is(':visible')) {
+        $('.l3 .i1').addClass('hidden');
+        $('.l3 .i2').addClass('db');
+    }
+    if ($('.trigger_4').is(':visible')) {
+        $('.l4 .i1').addClass('hidden');
+        $('.l4 .i2').addClass('db');
+    }
+    if ($('.trigger_5').is(':visible')) {
+        $('.l5 .i1').addClass('hidden');
+        $('.l5 .i2').addClass('db');
+    }
+    if ($('.trigger_6').is(':visible')) {
+        $('.l6 .i1').addClass('hidden');
+        $('.l6 .i2').addClass('db');
+    }
+    if ($('.trigger_7').is(':visible')) {
+        $('.l7 .i1').addClass('hidden');
+        $('.l7 .i2').addClass('db');
+    }
+    if ($('.trigger_8').is(':visible')) {
+        $('.l8 .i1').addClass('hidden');
+        $('.l8 .i2').addClass('db');
+    }
+    if ($('.trigger_9').is(':visible')) {
+        $('.l9 .i1').addClass('hidden');
+        $('.l9 .i2').addClass('db');
+    }
+    if ($('.trigger_10').is(':visible')) {
+        $('.l10 .i1').addClass('hidden');
+        $('.l10 .i2').addClass('db');
+    }
+}
+
 function burger_trigger() {
     if ($('.trigger_1').is(':visible')) {
         $('.l1 .i1').addClass('hidden');
@@ -43,7 +86,7 @@ function burger_trigger() {
         $('.burger_fade').removeClass('hidden').addClass('visible_block animated bounceInDown');
         setTimeout(function() {
                 $('.form_fade').removeClass('hidden').addClass('visible_block animated bounceInRight');
-        }, 1000);
+        }, 3000);
     }
 }
 

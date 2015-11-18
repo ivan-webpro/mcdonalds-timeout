@@ -67,6 +67,7 @@ if (!is_null($code)) {
             $_SESSION['auth']['name'] = $userInfo['name'];
             $_SESSION['auth']['email'] = $userInfo['email'];
             $_SESSION['auth']['picture'] = $picture;
+            $_SESSION['login']['social'] = 'fb_'.$userInfo['id'];
         }
     }
 }
@@ -86,7 +87,11 @@ if (isset($_SESSION['contest']) && $_SESSION['contest']) {
         mysql_free_result($result);
     }
     $_SESSION['contest'] = false;
-    header("Location: /contest.php?user=".$_SESSION['login']['id']);
+	if (isset($_SESSION['login']) && isset($_SESSION['login']['id'])) {
+		header("Location: /contest.php?user=".$_SESSION['login']['id']);
+	} else {
+		header("Location: /contest.php");
+	}
     exit;
 }
 header("Location: / " );

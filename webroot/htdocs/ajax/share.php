@@ -24,7 +24,8 @@ if (isset($_SESSION['login']) && isset($_SESSION['login']['id'])) {
             $query = "SELECT (`user`.`points` + `user`.`points2` + COALESCE((SELECT SUM(`points`) FROM `share` WHERE `user_id` = `user`.`id`),0)"
                 . " + COALESCE((SELECT SUM(`points`) FROM `like` WHERE `user_id` = `user`.`id`),0)) as `points`"
                 . " FROM `user` "
-                . " WHERE `id` = '%s'";
+                . " WHERE `id` = '%s'"
+		. " AND `status` = 2";
             $query = sprintf($query,
                 mysql_real_escape_string($id));
             $result = mysql_query($query);

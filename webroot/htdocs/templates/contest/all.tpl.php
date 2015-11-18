@@ -20,7 +20,8 @@ $query = "SELECT `user`.`id` as `id`"
         . ", (`user`.`points` + `user`.`points2` + COALESCE((SELECT SUM(`points`) FROM `share` WHERE `user_id` = `user`.`id`),0)"
         . " + COALESCE((SELECT SUM(`points`) FROM `like` WHERE `user_id` = `user`.`id`),0)) as `points`"
         . " FROM `user`, `city`"
-        . " WHERE `city`.`id` = `user`.`city`";
+        . " WHERE `city`.`id` = `user`.`city`"
+	. " AND `user`.`status` = 2";
 if (!is_null($search)) {
     $query .= " AND `user`.`city` = $search";
 }
@@ -61,6 +62,7 @@ $query .= " LIMIT 10";
 <?php include __DIR__ . '/../menu/menu.tpl.php'; ?>
             <div class="col-md-12 hidden-lg text-center">
                 <div id="the-basics2">
+		    <button class="pull-right hidden-lg h_btn_search btn_search"><img src="img/btn_search.png" alt=""></button>
                     <input class="typeahead search h_search" type="text" placeholder="<?=$cur_city?>" id="usercity2">
                 </div>                     
 <?php if(isset($_SESSION['login']) && isset($_SESSION['login']['id'])) : ?>                    
@@ -71,6 +73,27 @@ $query .= " LIMIT 10";
             </div>
         </div>
     </div>
+    <div class="container">
+            <div class="row prizes">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="title">
+                        <h2>призы</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6 text-center places_1">
+                    <img src="img/Apple_watch.png" alt="">
+                    <div class="places  text-left">
+                        1 Место<br><span>Apple Watch</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6 text-right">
+                    <img src="img/icon_4.png" alt="">
+                    <div class="places places_2 text-left">
+                        2-21 Место<br><span>Обед в McDonalds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="border">
         <div class="container">
              <div class="row">
@@ -91,6 +114,7 @@ $query .= " LIMIT 10";
 <?php endif; ?>
                      <br>
                     <div id="the-basics3">
+			<button class="pull-right visible-lg  btn_search"><img src="img/btn_search.png" alt=""></button>
                         <input class="typeahead visible-lg search" type="text" placeholder="<?=$cur_city?>" id="usercity3">
                     </div>
                  </div>
@@ -129,11 +153,11 @@ mysql_free_result($result);
 <?php endif; ?>
                      <div class="social_2 hidden-lg">
                          <ul>
-                             <li><a href="" id="vk_2"></a></li>
-                             <li><a href="" id="fb_2"></a></li>
-                             <li><a href="" id="ok_2"></a></li>
-                             <li><a href="" id="tw_2"></a></li>
-                             <li><a href="" id="gl"></a></li>
+                             <li><a href="" id="vk_2" class="vk-globalshare"></a></li>
+                             <li><a href="" id="fb_2" class="fb-globalshare"></a></li>
+                             <li><a href="" id="ok_2" class="ok-globalshare"></a></li>
+                             <li><a href="" id="tw_2" class="tw-globalshare"></a></li>
+                             <!-- <li><a href="" id="gl"></a></li> -->
                          </ul>
                      </div>
                  </div>
@@ -160,9 +184,9 @@ mysql_free_result($result);
                         <ul>
                             <li><a href="/auth/vkontakte.php?auth&contest" id="vk_2"></a></li>
                             <li><a href="/auth/facebook.php?auth&contest" id="fb_2"></a></li>
-                            <li><a href="/auth/odnoklassniki.php.php?auth&contest" id="ok_2"></a></li>
+                            <li><a href="/auth/odnoklassniki.php?auth&contest" id="ok_2"></a></li>
                             <li><a href="/auth/twitter.php?auth&contest" id="tw_2"></a></li>
-                            <li><a href="/auth/google.php?auth&contest" id="gl"></a></li>
+                            <!-- <li><a href="/auth/google.php?auth&contest" id="gl"></a></li> -->
                         </ul>
                     </div>
                     <button class="btn send"><img src="img/buttons/send.png" alt=""></button>

@@ -15,7 +15,7 @@ section {
 .navbar {
   width: 70%;
   top: 0;
-  margin: 25px auto 85px;
+  margin: 25px auto 55px;
   text-align: center;
   border: none; }
 
@@ -59,7 +59,8 @@ section {
   letter-spacing: 1px; }
 .title .sub_title {
   font-size: 20px;
-  font-family: "Helvetica-7-Bold"; }
+  font-family: "Helvetica-7-Bold";
+	margin-bottom: 30px; }
 .title p {
   font-family: "Helvetica-5-Normal";
   line-height: 1.5;
@@ -90,6 +91,7 @@ section {
   width: 20%; }
   .icons img {
     display: block;
+    max-height: 68px;
     margin: 0 auto 20px; }
   .icons span {
     font-family: "SegoeScript";
@@ -270,9 +272,9 @@ section {
   background: url(../img/RadioActive.png) no-repeat right 2px; }
 
 .form_fade .checkbox:not(checked) + label:after {
-  background: url(../img/Radio_2.png) no-repeat center bottom; }
+  background: url(../img/check_1.png) no-repeat center bottom; }
 .form_fade .checkbox:checked + label:after {
-  background: url(../img/RadioActive_2.png) no-repeat right 2px; }
+  background: url(../img/check_2.png) no-repeat center bottom; }
 .form_fade .checkbox + label {
   margin: -20px 0 40px 0; }
 
@@ -328,16 +330,28 @@ section {
   padding-bottom: 80px; }
 
 .orange {
+  padding-top: 50px;
+  padding-bottom: 45px;
   background: url(../img/Orange_bg.png) no-repeat;
   background-size: cover;
   z-index: 200; }
   .orange .title {
-    margin-bottom: 60px; }
+    margin-bottom: 0px; }
+.red{display: inline-block;
+color: #be0000;}
   .orange .burger_fade {
     padding-right: 30px; }
   .orange #Burger_Full {
     margin: 30px 0px 0 0;
     max-width: 100%; }
+     .orange .feedback .soc_block {
+    margin-bottom: 40px; }
+  .orange .feedback .social_2 ul {
+    margin: 0;
+    margin-bottom: 25px; }
+  .orange .feedback .social_2 li {
+    margin-right: 10px;
+  }
   .orange .feedback .text {
     margin-bottom: 30px;
     font-size: 20px;
@@ -380,12 +394,16 @@ section {
     bottom: 0;
     left: 15px;
     width: 240px;
-    height: 65px;
-    background: url(../img/buttons/Bt_last.png) no-repeat center top; }
+    height: 56px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: url(../img/buttons/SendMain.png) no-repeat center top; }
     .orange .feedback .participate:hover, .orange .feedback .participate:focus {
       /* style */
-      background: url(../img/buttons/Bt_last_hover.png) no-repeat top center;
-      width: 244px; }
+      -webkit-box-shadow: 0px 1px 5px #e16502;
+      -moz-box-shadow: 0px 1px 5px #e16502;
+      box-shadow: 0px 1px 5px #e16502; }
 
 .social_2 ul {
   padding: 5px 0 0 0; }
@@ -420,7 +438,7 @@ footer {
     vertical-align: middle;
     color: #323232; }
   footer ul {
-    margin: 5px 0 0 20px; }
+    margin: 0px 0 0 20px; }
 
 .burger {
 //  position: fixed;
@@ -517,7 +535,7 @@ footer {
   .modal .sub_title {
     font-size: 18px;
     font-family: "SchistBlack";
-    margin: 20px 0 10px; }
+    margin: 10px 0 10px; }
   .modal .modal-header {
     border: none;
     padding: 0 0; }
@@ -548,11 +566,16 @@ footer {
       text-transform: none;
       margin-bottom: 40px;
       font-family: "SchistBlack"; }
-
+.modal_3 .close,.modal_2 .close {
+  top: -20px;right: -20px;
+}
 .modal_3 .modal-title, .modal_4 .modal-title {
   font-size: 24px;
   text-transform: none;
   margin-bottom: 40px; }
+.modal_3 .modal-title{
+  margin-bottom: 0;
+}
 .modal_3 .forgot, .modal_4 .forgot {
   text-transform: none;
   font-size: 12px;
@@ -582,6 +605,11 @@ footer {
   font-size: 14px;
   text-transform: none;
   line-height: 1.7; }
+.modal_like .social_2 span {
+  font-size: 20px;
+  margin-bottom: 30px;
+  display: block; }
+
 
 .tags_filtr {
   margin-top: 50px;
@@ -608,17 +636,35 @@ footer {
       background: url(../img/bd-2.png) no-repeat center;
         background-size: 100%;}
 
+
 .search {
-  margin-top: 30px;
+  margin-top: 0px;
   float: right;
   padding: 4px 10px;
-  width: 340px;
+  width: 100%;
   height: 40px;
   color: #878788;
   font-size: 13px;
-  background: #FFFFFF url(../img/search.png) no-repeat 97%;
+  background: #FFFFFF;
   border-radius: 2px;
   border: none; }
+
+.btn_search {
+  position: relative;
+  max-width: 24%;
+  bottom: -40px;
+  right: -120px;
+  max-height: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 20px;
+  border: none;
+  background-color: transparent;
+  padding: 0; }
+  .btn_search img {
+    max-width: 100%;
+    max-height: 40px; 
+    height: 40px;}
 
 .logIn {
   height: 57px;
@@ -640,7 +686,20 @@ footer {
   background-attachment: fixed; }
   .storys_page .navbar {
     margin-bottom: 30px; }
-
+.prizes h2 {
+  margin-top: 30px;
+  font-size: 30px; }
+.prizes img, .prizes .places {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px; }
+.prizes .places {
+  font-size: 24px;
+  font-family: "SchistBlack"; }
+  .prizes .places span {
+    color: #ffa800; }
+.prizes .places_2 {
+  margin-top: 20px; }
 .story {
   width: 100%;
   min-height: 500px;
@@ -761,7 +820,7 @@ footer {
     background-image: url(../img/buttons/more.png); }
 
 .border, .rules {
-  border: 30px solid transparent;
+  border: 35px solid transparent;
   -moz-border-image: url(../img/Frame_2.png) 43 round round;
   -webkit-border-image: url(../img/Frame_2.png) 43 round round;
   -o-border-image: url(../img/Frame_2.png) 43 round round;
@@ -780,6 +839,7 @@ footer {
 
 .user_page {
   padding-top: 0;
+  background-attachment: fixed;
   padding-bottom: 60px; }
   .user_page .avatar p {
     font-size: 14px;
@@ -804,10 +864,20 @@ footer {
     text-transform: uppercase;
     margin-top: 30px; }
   .user_page .user .name {
+    max-width: 70%;
     font-family: "SchistBlack";
     font-size: 26px;
     text-transform: uppercase;
     margin-top: 60px; }
+  .user_page .like {
+    float: right;
+    margin-top: -30px;
+    font-family: "SchistBold";
+    text-transform: uppercase;
+    font-size: 16px; 
+    line-height: 1;}
+    .user_page .like img {
+      vertical-align: bottom; }
   .user_page .user .town {
     font-family: "SchistBold";
     font-size: 24px;
@@ -851,6 +921,7 @@ footer {
       font-family: "Helvetica-7-Bold";
       font-size: 14px; }
   .user_page .award p {
+    margin-top: 15px;
     font-family: "SchistBold";
     font-size: 24px;
     letter-spacing: 1px;
@@ -879,7 +950,8 @@ footer {
     font-family: "Helvetica-7-Bold";
     font-size: 20px;
     display: block;
-    margin-top: 70px; }
+    margin-top: 70px;
+    margin-bottom: -10px; }
   .product .tabs_burger .burger {
     position: static;
     margin-right: -30px;
@@ -889,9 +961,10 @@ footer {
       font-family: "Helvetica-7-Bold"; }
     .product .tabs_burger .burger ul {
       margin: 30px 0 50px; }
+    div.slick-list.draggable{padding-top: 30px; }
     .product .tabs_burger .burger .slick-slide {
       display: block;
-      margin-bottom: 8px; }
+      margin-bottom: 5px; }
       .product .tabs_burger .burger .slick-slide img {
         max-width: 100% !important; }
       .product .tabs_burger .burger .slick-slide .i2 {
@@ -933,7 +1006,7 @@ footer {
     width: 230px;
     height: 55px;
     display: block;
-    margin: 50px auto;
+    margin: 20px auto 50px;
     background: url(../img/buttons/BT_2.png) no-repeat center;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;

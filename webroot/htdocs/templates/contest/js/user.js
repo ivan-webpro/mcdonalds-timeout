@@ -63,7 +63,7 @@ $(document).ready(function(){
         var cur_id = $(this).attr('userid');
         var city_id = $(this).attr('cityid');
         var text1 = $(this).attr('text1');
-        text1 = 'Ответь на вопросы викторины, поделись фактом о любимом городе и выиграй бесплатный обед в «Макдоналдс» для тебя и твоих друзей.';
+        text1 = 'Прими участие в конкурсе - напиши свой факт, копи баллы и выиграй Apple Watch или обед в «Макдонадлс».';
         var url = 'http://twitter.com/share?text='+encodeURIComponent(text1)+'&url=http://mcdonalds.timeout.ru/contest.php?user='+cur_id;
 	window.open(url,'','toolbar=0,status=0,width=636,height=348');
         jQuery.post( "/ajax/share.php", { 'response' : null, 'id' : cur_id, 'type' : 'tw' }, function(data) {
@@ -82,7 +82,11 @@ $(document).ready(function(){
             var obj = $.parseJSON(data);
             if (!obj.error) {
                 $("#user"+cur_id+'-points').html(obj.points);
-            }
+            } else {
+		if (obj.needlogin) {
+			$("#modal_like").modal("show");
+		}
+	    }
         });
         event.stopPropagation();
         return false;

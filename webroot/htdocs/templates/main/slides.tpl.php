@@ -1,22 +1,22 @@
 <?php
-$html_styles[] = '/css/style.css?v=5';
-$html_styles[] = '/css/style2.css?v=5';
-$html_styles[] = '/css/media.css?v=5';
-$html_styles[] = '/css/media2.css?v=5';
-$html_scripts[] = '/templates/main/js/scripts.js?v=5';
-$html_scripts[] = '/templates/main/js/slides.js?v=5';
+$html_styles[] = '/css/style.css?v=6';
+$html_styles[] = '/css/style2.css?v=6';
+$html_styles[] = '/css/media.css?v=6';
+$html_styles[] = '/css/media2.css?v=6';
+$html_scripts[] = '/templates/main/js/scripts.js?v=6';
+$html_scripts[] = '/templates/main/js/slides.js?v=6';
 
-$html_metas[] = '<meta property="og:title" content="Меняем факт на съедобный приз" />';
+$html_metas[] = '<meta property="og:title" content="Расскажи, чем знаменит твой город" />';
 $html_metas[] = '<meta property="og:url" content="http://mcdonalds.timeout.ru" />';
 $html_metas[] = '<meta property="og:type" content="website" />';
-$html_metas[] = '<meta property="og:image" content="http://mcdonalds.timeout.ru/upload/social/ok/507.jpg" />';
-$html_metas[] = '<link rel="image_src" href="http://mcdonalds.timeout.ru/upload/social/ok/507.jpg">';
+$html_metas[] = '<meta property="og:image" content="http://mcdonalds.timeout.ru/upload/social/SharingOK2.jpg" />';
+$html_metas[] = '<link rel="image_src" href="http://mcdonalds.timeout.ru/upload/social/SharingOK2.jpg">';
 $html_metas[] = '<meta property="og:image:width" content="548" />';
 $html_metas[] = '<meta property="og:image:height" content="343" />';
-$html_metas[] = '<meta property="og:description" content="Ответь на вопросы викторины, поделись фактом о любимом городе и выиграй бесплатный обед в «Макдоналдс» для тебя и твоих друзей." />';
-$html_metas[] = '<meta name="description" content="Ответь на вопросы викторины, поделись фактом о любимом городе и выиграй бесплатный обед в «Макдоналдс» для тебя и твоих друзей.">';
+$html_metas[] = '<meta property="og:description" content="Ответь на вопросы викторины, поделись фактом о любимом городе и выиграй Apple Watch или бесплатный обед в Макдоналдс." />';
+$html_metas[] = '<meta name="description" content="Ответь на вопросы викторины, поделись фактом о любимом городе и выиграй Apple Watch или бесплатный обед в Макдоналдс.">';
 
-$active = array(' class="active"', '', '');
+$active_menu = array(' class="active"', '', '');
 ?>
 <div class="slides">
     <div class="hidden"></div>

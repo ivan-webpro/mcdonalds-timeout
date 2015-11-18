@@ -8,6 +8,12 @@ if ($a === 1) {
     $_SESSION['game']['correct'] = true;
 }
 ?>
+<style>
+.block_12 { display: none; }
+</style>
+<script>
+var block12_trigger = true;
+</script>
 <section class="block_12 town_screen slide">
     <div class="border">
         <div class="trigger_12"></div>
@@ -35,13 +41,10 @@ if ($a === 1) {
     </div>
 </section>
 <script>
-    $('.block_12').viewportChecker({
-        classToAdd: 'visible',
-        callbackFunction: function(elem, action){
-            setTimeout(function() { load_next_slide("q0"); }, 1000);
-        }
-    });
+console.log("Запускаем таймаут");
+load_next_slide("q0");
+//setTimeout(function() { console.log("В таймауте");load_next_slide("q0"); }, 5000);
 </script>
 <script>
-    $("#modal_2 .text, #modal_3 .text").html('<h4 class="modal-title" id="myModalLabel"><img src="img/popup/01.png">Булочка</h4><div class="sub_title">Поставщик - ООО "Ист Болт Рус”, Москва</div><p>В пекарне Ист Болт Рус используется пшеничная мука высшего сорта, которая производится на предприятии ОАО «Рязаньзернопродукт».</p><br><div class="video"><video preload="" controls="" style="display: inline;"><source src="/upload/video/Булочка.mp4"></video></div>');
+    $("#modal_2 .text, #modal_3 .text").html('<h4 class="modal-title" id="myModalLabel"><img src="img/popup/01.png">Булочка</h4><div class="sub_title">Поставщик - ООО "Ист Болт Рус”, Москва</div><p>В пекарне Ист Болт Рус используется пшеничная мука высшего сорта, которая производится на предприятии ОАО «Рязаньзернопродукт».</p><br><div class="video"><video preload="" controls="" style="display: inline;" poster="/upload/video/1.png"><source src="/upload/video/Булочка_2.mp4"></video></div>');
 </script>

@@ -8,9 +8,9 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav nav-justified">
-                <li<?=$active[0]?>><a href="/">Главная</a></li>
-                <li<?=$active[1]?>><a href="/contest.php">Конкурс</a></li>
-                <li<?=$active[2]?>><a href="/product.php">Стейк Хаус Классик</a></li>
+                <li<?=$active_menu[0]?>><a href="/">Главная</a></li>
+                <li<?=$active_menu[1]?>><a href="/contest.php">Конкурс</a></li>
+                <li<?=$active_menu[2]?>><a href="/product.php">Стейк Хаус Классик</a></li>
 <?php if (isset($menu_points) && $menu_points) : ?>                
                 <li class="visible-xs visible-768">
                     <div class="hidden-lg hidden-md scores">

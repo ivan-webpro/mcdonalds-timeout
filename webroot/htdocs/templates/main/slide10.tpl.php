@@ -31,5 +31,5 @@ $answer1 = 'answer9';
 include __DIR__ . '/slide.tpl.php';
 ?>
 <script>
-    $("#modal_2 .text, #modal_3 .text").html('<h4 class="modal-title" id="myModalLabel"><img src="img/popup/08.png">Лук резаный красный</h4><div class="sub_title">Поставщик - компания "Белая Дача”, г.Котельники МО</div><p>Свежий, красный лук, богатый витамином С</p>');
+    $("#modal_2 .text, #modal_3 .text").html('<h4 class="modal-title" id="myModalLabel"><img src="img/popup/08.png">Лук резаный красный</h4><div class="sub_title">Поставщик - компания "Белая Дача” <br> г.Котельники МО</div><p>Свежий, красный лук, богатый витамином С</p>');
 </script>

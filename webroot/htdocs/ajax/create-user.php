@@ -99,6 +99,11 @@ if (strlen($text) > 300) {
     $response['text'] = 'Факт о городе не должен быть длинее 300 символов';
 }
 
+if (empty($text)) {
+    $success = false;
+    $response['text'] = 'Необходимо ввести факт о городе';
+}
+
 if (is_null($points)) {
     $success = false;
     $response['points'] = 'Сведения о набранных баллах отсутствуют';

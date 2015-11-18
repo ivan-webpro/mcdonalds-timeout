@@ -1,2 +1,9 @@
 .social{right: 1% !important;}
 .burger{left: 1%;top: 15% !important;}
+.modal .modal-content {
+    border-width: 30px !important;
+	border-color: #FFFFFF}
+.modal-body{
+	background: #FFFFFF;
+	margin: 0 -2px -4px 0;
+}

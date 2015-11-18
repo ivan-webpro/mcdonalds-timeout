@@ -7,8 +7,7 @@ ob_start();
 
 $data = array();
 $ids = array();
-$query = sprintf("SELECT `id`, `name`, `region` FROM `city` WHERE `id` IN (SELECT DISTINCT(`city`) FROM `user`) ORDER BY `name`, `region`",
-        mysql_real_escape_string($city));
+$query = "SELECT `id`, `name`, `region` FROM `city` WHERE `id` IN (SELECT DISTINCT(`city`) FROM `user` WHERE `status` = 2) ORDER BY `name`, `region`";
 $result = mysql_query($query, $mysql);
 while ($row = mysql_fetch_assoc($result)) {
     $data[] = $row['name']." (".$row['region'].")";

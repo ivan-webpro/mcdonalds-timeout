@@ -35,8 +35,8 @@ $_SESSION['game']['answer'] = 0;
                 </div>
                 <div class="icons"><img src="img/arrow.png" alt=""></div>
                 <div class="icons">
-                    <img src="img/icon_4.png" alt="">
-                    <span>Выиграй обед <br>в Макдоналдс</span>
+                    <img src="img/Apple_watch.png" alt="">
+                    <span>Выиграй<br>Apple Watch</span>
                 </div>
             </div>
         </div>
@@ -65,9 +65,14 @@ $_SESSION['game']['answer'] = 0;
 <script>
 $(document).ready(function(){
     if (window.location.hash === '#play') {
-        trigger_start = true;
-        $("#modal_1").modal("show");
-        load_next_slide("q0");
+	if (!start2) {
+	        trigger_start = true;
+	        $("#modal_1").modal("show");
+	        load_next_slide("q0");
+	} else {
+		location.href = '/contest.php?user='+start2;
+        	 return false;
+	}
     }
 });
 </script>

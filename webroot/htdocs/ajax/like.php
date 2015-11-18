@@ -8,29 +8,44 @@ ob_start();
 $id = filter_input(INPUT_POST, 'id');
 $ip = _get_client_ip();
 
-if (isset($_SESSION['login']) && isset($_SESSION['login']['id'])) {
-    $ip = 'user'.$_SESSION['login']['id'];
+$response['session'] = $_SESSION['login'];
+if (isset($_SESSION['login']) && (isset($_SESSION['login']['social']) || isset($_SESSION['login']['id']))) {
+	if (isset($_SESSION['login']['social'])) {
+		$ip = 'user'.$_SESSION['login']['social'];
+	} else {
+		    $ip = 'user'.$_SESSION['login']['id'];
+	}
+} else {
+	$response['needlogin'] = true;
 }
-if ($id && $ip) {
-    $query = "INSERT INTO `like` (`user_id`, `date`, `datetime`, `ip`, `points`) VALUES ('%s', NOW(), NOW(), '%s', 10)";
-    $query = sprintf($query,
-            mysql_real_escape_string($id),
-            mysql_real_escape_string($ip));
-    mysql_query($query, $mysql);
-    $insert_id = mysql_insert_id($mysql);
-    if ($insert_id) {
-        $query = "SELECT (`user`.`points` + `user`.`points2` + COALESCE((SELECT SUM(`points`) FROM `share` WHERE `user_id` = `user`.`id`),0)"
-            . " + COALESCE((SELECT SUM(`points`) FROM `like` WHERE `user_id` = `user`.`id`),0)) as `points`"
-            . " FROM `user` "
-            . " WHERE `id` = '%s'";
-        $query = sprintf($query,
-            mysql_real_escape_string($id));
-        $result = mysql_query($query);
-        if ($row = mysql_fetch_assoc($result)) {
-            $response = array("error" => false, 'id' => $insert_id, 'points' => $row['points']);
-        }
-        mysql_free_result($result);
-    }
+
+if (!isset($response['needlogin']) || !$response['needlogin']) {
+	if ($id && $ip) {
+		if (isset($_COOKIE['user'])) {
+		    $query = "INSERT INTO `like` (`user_id`, `date`, `datetime`, `ip`, `points`) VALUES ('%s', NOW(), NOW(), '%s', 10)";
+		    $query = sprintf($query,
+			    mysql_real_escape_string($id),
+			    mysql_real_escape_string($ip));
+		    mysql_query($query, $mysql);
+		    $insert_id = mysql_insert_id($mysql);
+		} else {
+			$insert_id = true;
+		}
+	    if ($insert_id) {
+		$query = "SELECT (`user`.`points` + `user`.`points2` + COALESCE((SELECT SUM(`points`) FROM `share` WHERE `user_id` = `user`.`id`),0)"
+		    . " + COALESCE((SELECT SUM(`points`) FROM `like` WHERE `user_id` = `user`.`id`),0)) as `points`"
+		    . " FROM `user` "
+		    . " WHERE `id` = '%s'"
+			. " AND `status` = 2";
+		$query = sprintf($query,
+		    mysql_real_escape_string($id));
+		$result = mysql_query($query);
+		if ($row = mysql_fetch_assoc($result)) {
+		    $response = array("error" => false, 'id' => $insert_id, 'points' => $row['points']);
+		}
+		mysql_free_result($result);
+	    }
+	}
 }
 
 

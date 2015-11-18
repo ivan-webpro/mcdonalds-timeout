@@ -8,13 +8,18 @@ if (isset($_SESSION['auth'])) {
     $email = isset($_SESSION['auth']['email']) ? $_SESSION['auth']['email'] : null;
     $picture = isset($_SESSION['auth']['picture']) ? $_SESSION['auth']['picture'] : null;
 }
+
+$active_menu = array(' class="active"', '', '');
 ?>
 <section class="orange">
     <div class="container">
+			<div class="row">
+<?php include __DIR__ . '/../menu/menu.tpl.php'; ?>
+			</div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1 text-center title">
-                <h2><span>КЛАСС!</span> ТЫ ОТВЕТИЛ НА ВСЕ <br class="hidden-xs">ВОПРОСЫ И НАБРАЛ <br class="visible-xxs"><span id="final_points2"><?=$_SESSION['game']['answer']?></span> БАЛЛОВ!</h2>
-                <div class="sub_title">ЗАРЕГИСТРИРУЙСЯ, ЧТОБЫ ПРИНЯТЬ УЧАСТИЕ В КОНКУРСЕ</div>
+                <h2><span>КЛАСС!</span> ТЫ ОТВЕТИЛ НА ВСЕ <br class="hidden-xs">ВОПРОСЫ И НАБРАЛ <br class="visible-xxs"><div class="red"><span id="final_points2"><?=$_SESSION['game']['answer']?></span> БАЛЛОВ!</div></h2>
+                <div class="sub_title">Напиши интересный факт о своем городе и получи еще 500 баллов</div>
             </div>
         </div>
         <div class="row feedback">
@@ -28,7 +33,7 @@ if (isset($_SESSION['auth'])) {
                             <li><a href="/auth/facebook.php?auth" id="fb_2"></a></li>
                             <li><a href="/auth/odnoklassniki.php?auth" id="ok_2"></a></li>
                             <li><a href="/auth/twitter.php?auth" id="tw_2"></a></li>
-                            <li><a href="/auth/google.php?auth" id="gl"></a></li>
+                            <!-- <li><a href="/auth/google.php?auth" id="gl"></a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -36,12 +41,16 @@ if (isset($_SESSION['auth'])) {
             </div>
             <div class="col-md-6 col-sm-6 form_fade hidden">
                 <div class="text">
-                    ОТПРАВЬ НАМ ИНТЕРЕСНЫЙ ФАКТ О ТВОЕМ ГОРОДЕ 
-                    <br class="hidden-xs">И ЭТО ДОБАВИТ <br class="visible-xxs">500 БАЛЛОВ К ТВОЕМУ РЕЙТИНГУ
+                   
                 </div>
                 <div class="row">
                     <form role="form" id="userform">
                         <div class="col-md-6">
+                            <div class="soc_block">
+                                <p>Ты можешь зарегистрироваться, 
+                                    <br>используя свой аккаунт в социальной сети</p>
+                                    
+                            </div>
                             <input type="text" id="username" name="username" placeholder="Имя" value="<?=$name?>" required>
                             <input type="email" class="form-control" id="useremail" name="useremail" placeholder="E-mail" value="<?=$email?>" required>
 <?php if (!is_null($id)) : ?>
@@ -52,12 +61,12 @@ if (isset($_SESSION['auth'])) {
                             <div id="the-basics">
                                 <input class="typeahead" type="text" placeholder="Город" id="usercity" name="usercity" required>
                             </div>
-                            <textarea id="usertext" name="usertext" placeholder="Интересный факт о твоем городе" cols="30" rows="6"></textarea>
+                            
 <?php if (!is_null($picture)) : ?>
-                            <input type="hidden" class="form-control" id="userfile" value="<?=$picture?>" required>
+                            <input type="hidden" class="form-control" id="userfile" value="<?=$picture?>">
 <?php else : ?>
                             <button class="btn load_photo"></button>
-                            <span class="load_photo_text">картинка не выбрана</span>
+                            <span class="load_photo_text">Картинка не выбрана</span>
                             <input type="file" id="userfile" name="userfile" style="visibility:hidden; margin:0; padding:0; height: 1px;">
 <?php endif; ?>
                             <input type="checkbox" class="checkbox" id="userrules" name="userrules" required />
@@ -66,17 +75,17 @@ if (isset($_SESSION['auth'])) {
                             <button class="btn participate hidden-lg"></button>
                         </div>
                         <div class="col-md-6 right_block visible-lg">
-                            <p>Ты можешь зарегистрироваться, 
-                            <br>используя свой аккаунт в социальной сети</p>
+                            
                             <div class="social_2">
                                 <ul>
                                     <li><a href="/auth/vkontakte.php?auth" id="vk_2"></a></li>
                                     <li><a href="/auth/facebook.php?auth" id="fb_2"></a></li>
                                     <li><a href="/auth/odnoklassniki.php?auth" id="ok_2"></a></li>
                                     <li><a href="/auth/twitter.php?auth" id="tw_2"></a></li>
-                                    <li><a href="/auth/google.php?auth" id="gl"></a></li>
+                                    <!-- <li><a href="/auth/google.php?auth" id="gl"></a></li> -->
                                 </ul>
                             </div>
+                            <textarea id="usertext" name="usertext" placeholder="Интересный факт о твоем городе" cols="30" rows="6" required></textarea>
                             <button type="submit" class="btn participate singup"></button>
                         </div>
                     </form>
@@ -112,6 +121,7 @@ if (isset($_SESSION['auth'])) {
 </div>
 <?php include __DIR__ . '/../menu/footer.tpl.php'; ?>
 <script>
+globalshare();
 var cities = [];
 $.get('/ajax/load-city-list.php', function(data) {
     var obj = $.parseJSON(data);
@@ -160,7 +170,11 @@ $('.load_photo').bind('click', function() {
     $('#userfile').click();
     return false;
 });
+<?php if (isset($_SESSION['auth']) && isset($_SESSION['auth']['picture']) && !empty($_SESSION['auth']['picture'])) : ?>
+var current_image = 'social';
+<?php else : ?>
 var current_image = null;
+<?php endif; ?>
 $(':file').change(function(){
     current_image = null;
     var file = this.files[0];
@@ -214,7 +228,8 @@ $('#userform').on('submit', function() {
     var text = $('#usertext').val();
     var file = current_image;
     var rules = $('#userrules').val();
-    if (typeof file === 'string' && file.length > 0) {
+    //if (typeof file === 'string' && file.length > 0) {
+    if (document.getElementById('userrules').checked) {
         $.post('/ajax/create-user.php', {
                 name: name,
                 email: email,
@@ -236,6 +251,8 @@ $('#userform').on('submit', function() {
                 }
             }
         );
+    } else {
+	alert("Вам необходимо согласиться с Правилами конкурса");
     }
     return false;
 });

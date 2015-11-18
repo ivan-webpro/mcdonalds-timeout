@@ -7,7 +7,7 @@ $html_scripts[] = '/templates/main/js/scripts.js';
 $html_scripts[] = '/templates/contest/js/contest.js';
 $html_scripts[] = '/templates/contest/js/user.js';
 
-$active = array('', ' class="active"', '');
+$active_menu = array('', ' class="active"', '');
 
 $user = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
 
@@ -40,7 +40,8 @@ if ($user > 0) {
         
         // Расчёт места
         $query = "SELECT COUNT(*) as `place` FROM `user` WHERE (`user`.`points` + `user`.`points2` + COALESCE((SELECT SUM(`points`) FROM `share` WHERE `user_id` = `user`.`id`),0)"
-            . " + COALESCE((SELECT SUM(`points`) FROM `like` WHERE `user_id` = `user`.`id`),0)) > '%s'";
+            . " + COALESCE((SELECT SUM(`points`) FROM `like` WHERE `user_id` = `user`.`id`),0)) > '%s'"
+		. " AND `status` = 2";
         $query = sprintf($query,
             mysql_real_escape_string($points1));
         $result = mysql_query($query, $mysql);
@@ -62,4 +63,24 @@ if ($user > 0) {
 }
 
 ?>
+<div class="modal fade modal_like" id="modal_like" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="img/close.png" alt=""></button>
+		</div>
+		<div class="modal-body">
+	    		<div class="social_2">
+	    			<span>Для того, чтобы проголосовать за этого участника, пожалуйста, авторизуйся </span>
+				<ul>
+					<li><a href="/auth/vkontakte.php?auth&contest" id="vk_2"></a></li>
+					<li><a href="/auth/facebook.php?auth&contest" id="fb_2"></a></li>
+					<li><a href="/auth/odnoklassniki.php?auth&contest" id="ok_2"></a></li>
+					<li><a href="/auth/twitter.php?auth&contest" id="tw_2"></a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 

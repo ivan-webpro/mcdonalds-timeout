@@ -9,7 +9,7 @@ $pass = $_SERVER['PHP_AUTH_PW'];
 $validated = ( in_array( $user, $valid_users ) ) && ( $pass == $valid_passwords[ $user ] );
 
 if ( !$validated ) {
-  header( 'WWW-Authenticate: Basic realm="Electrolux Admin Area"' );
+  header( 'WWW-Authenticate: Basic realm="McDonalds Admin Area"' );
   header( 'HTTP/1.0 401 Unauthorized' );
   die ( 'Not authorized' );
 }
