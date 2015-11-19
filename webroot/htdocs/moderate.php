@@ -25,7 +25,7 @@ if (!is_null($publish)) {
     $result = mysql_query($query);
     if ($row = mysql_fetch_assoc($result)) {
         if ($row['status'] != 2) {
-            $query = "UPDATE `user` SET `status` = 2, `points2` = 500 WHERE `id` = $publish";
+            $query = "UPDATE `user` SET `status` = 2, `points2` = 500, `moderated_time` = NOW() WHERE `id` = $publish";
             if (mysql_query($query)) {
                 send_email($row['email'], 2, $row['id']);
             }
@@ -38,7 +38,7 @@ if (!is_null($block)) {
     $result = mysql_query($query);
     if ($row = mysql_fetch_assoc($result)) {
         if ($row['status'] != 1) {
-            $query = "UPDATE `user` SET `status` = 1, `points2` = 0 WHERE `id` = $block";
+            $query = "UPDATE `user` SET `status` = 1, `points2` = 0, `moderated_time` = NOW() WHERE `id` = $block";
             if (mysql_query($query)) {
                 send_email($row['email'], 1, $row['id']);
             }        

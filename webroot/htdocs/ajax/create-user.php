@@ -15,12 +15,18 @@ if (isset($_SESSION['auth']) && !empty($_SESSION['auth'])) {
     $password = $_SESSION['auth']['id'];
     $city = filter_input(INPUT_POST, 'city');
     $text = filter_input(INPUT_POST, 'text');
-    $file = $_SESSION['auth']['picture'];
-    if ($type == 'tw') {
-        $file = str_replace('_normal', '_400x400', $file);
-    }
-    $file = file_get_contents($file); 
-    $rules = filter_input(INPUT_POST, 'rules');
+    $file = filter_input(INPUT_POST, 'file');
+	if (empty($file)) {
+		$file = $_SESSION['auth']['picture'];
+		if ($type == 'tw') {
+			$file = str_replace('_normal', '_400x400', $file);
+		}
+		$file = file_get_contents($file); 
+	} else {
+		$img = preg_replace('#^data:image/[^;]+;base64,#', '', $file);
+        	$img = str_replace(' ', '+', $img);
+        	$file = base64_decode($img); 
+	}
 } else {
     $type = 'mn';
     $social_id = null;
@@ -33,7 +39,6 @@ if (isset($_SESSION['auth']) && !empty($_SESSION['auth'])) {
         $img = preg_replace('#^data:image/[^;]+;base64,#', '', $file);
         $img = str_replace(' ', '+', $img);
         $file = base64_decode($img); 
-    $rules = filter_input(INPUT_POST, 'rules');
 }
 $points = isset($_SESSION['game']) && isset($_SESSION['game']['answer']) ? intval($_SESSION['game']['answer']) : null;
 
@@ -50,7 +55,7 @@ if (!is_null($social_id)) {
 }
 
 // Проверка имени
-if (strlen($name) < 3 && strlen($name) > 150) {
+if (mb_strlen($name, 'utf8') < 3 && mb_strlen($name, 'utf8') > 150) {
     $success = false;
     $response['name'] = 'Имя должно быть длиннее 3 и не больше 150 символов';
 }
@@ -69,7 +74,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $response['email'] = 'Неверный email';
 }
 
-if (strlen($password) < 4 && strlen($password) > 16) {
+if (mb_strlen($password, 'utf8') < 4 && mb_strlen($password, 'utf8') > 16) {
     $success = false;
     $response['password'] = 'Имя должно быть длиннее 4 и не больше 16 символов';
 } else {
@@ -94,9 +99,14 @@ if (preg_match('/([^\s]+)\s\((.+)\)/', $city, $matches)) {
     $response['city'] = 'Нет такого города';
 }
 
-if (strlen($text) > 300) {
+if (mb_strlen($text, 'utf8') > 2000) {
     $success = false;
-    $response['text'] = 'Факт о городе не должен быть длинее 300 символов';
+    $response['text'] = 'Факт о городе не должен быть длинее 2000 символов';
+}
+
+if (mb_strlen($text, 'utf8') < 200) {
+    $success = false;
+    $response['text'] = 'Факт о городе не должен быть короче 200 символов';
 }
 
 if (empty($text)) {
@@ -108,6 +118,8 @@ if (is_null($points)) {
     $success = false;
     $response['points'] = 'Сведения о набранных баллах отсутствуют';
 }
+
+
 if ($success) {
     $query = sprintf("INSERT INTO `user` (`type`, `social_id`, `name`, `email`, `password`, `city`, `text`, `status`, `points`, `created`, `modify`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', 0, '%s', NOW(), NOW())",
             mysql_real_escape_string($type),

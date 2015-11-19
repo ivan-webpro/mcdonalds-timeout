@@ -31,5 +31,5 @@ $answer1 = 'answer7';
 include __DIR__ . '/slide.tpl.php';
 ?>
 <script>
-    $("#modal_2 .text, #modal_3 .text").html('<h4 class="modal-title" id="myModalLabel"><img src="img/popup/06.png">Сыр плавленый </h4><div class="sub_title">Поставщик - ООО "Хохланд Русланд”<br> Раменский район, МО</div><p>Для  приготовления данного сандвича Макдоналдс использует плавленый сыр, приготовленный из молока, без искусственных красителей и ароматизаторов.</p>');
+    $("#modal_2 .text, #modal_3 .text").html('<h4 class="modal-title" id="myModalLabel"><img src="img/popup/06-2.png">Сыр плавленый </h4><div class="sub_title">Поставщик - ООО "Хохланд Русланд”<br> Раменский район, МО</div><p>Для  приготовления данного сандвича Макдоналдс использует плавленый сыр, приготовленный из молока, без искусственных красителей и ароматизаторов.</p>');
 </script>

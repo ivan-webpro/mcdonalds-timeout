@@ -8,9 +8,13 @@ ob_start();
 $success = true;
 $text = filter_input(INPUT_POST, 'text');
 
-if (strlen($text) > 300) {
+if (mb_strlen($text, 'utf8') > 2000) {
     $success = false;
-    $response['text'] = 'Факт о городе не должен быть длинее 300 символов';
+    $response['text'] = 'Факт о городе не должен быть длинее 2000 символов';
+}
+if (mb_strlen($text, 'utf8') < 200) {
+    $success = false;
+    $response['text'] = 'Факт о городе не должен быть короче 200 символов';
 }
 
 if ($success) {
@@ -24,7 +28,7 @@ if ($success) {
         }
         mysql_free_result($result);
         
-        $query = sprintf("UPDATE `user` SET `text` = '%s', `status` = 0, `modify` = NOW() WHERE `id` = '%s' AND `text` = '' OR `text` IS NULL",
+        $query = sprintf("UPDATE `user` SET `text` = '%s', `status` = 0, `modify` = NOW(), `moderated_time` = NULL WHERE `id` = '%s'",
                 mysql_real_escape_string($text),
                 mysql_real_escape_string($_SESSION['login']['id']));
         if (mysql_query($query, $mysql)) {

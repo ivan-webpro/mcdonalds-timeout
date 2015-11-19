@@ -46,7 +46,7 @@ $active_menu = array(' class="active"', '', '');
                 <div class="row">
                     <form role="form" id="userform">
                         <div class="col-md-6">
-                            <div class="soc_block">
+                            <div class="soc_block visible-lg">
                                 <p>Ты можешь зарегистрироваться, 
                                     <br>используя свой аккаунт в социальной сети</p>
                                     
@@ -63,20 +63,16 @@ $active_menu = array(' class="active"', '', '');
                             </div>
                             
 <?php if (!is_null($picture)) : ?>
-                            <input type="hidden" class="form-control" id="userfile" value="<?=$picture?>">
+				<div id="userphoto"><div><img id="myImage" src="<?=$picture?>"/></div></div>
 <?php else : ?>
-                            <button class="btn load_photo"></button>
-                            <span class="load_photo_text">Картинка не выбрана</span>
-                            <input type="file" id="userfile" name="userfile" style="visibility:hidden; margin:0; padding:0; height: 1px;">
+				<div id="userphoto"></div>
 <?php endif; ?>
-                            <input type="checkbox" class="checkbox" id="userrules" name="userrules" required />
-                            <label for="userrules">C <a href="/rules.pdf" target="_blank">правилами конкурса</a> ознакомлен</label>
-                            
-                            <button class="btn participate hidden-lg"></button>
+                            <button class="btn load_photo"></button>
+                            <input type="file" id="userfile" name="userfile" style="visibility:hidden; margin:0; padding:0; height: 1px;">
                         </div>
-                        <div class="col-md-6 right_block visible-lg">
+                        <div class="col-md-6 right_block">
                             
-                            <div class="social_2">
+                            <div class="social_2  visible-lg">
                                 <ul>
                                     <li><a href="/auth/vkontakte.php?auth" id="vk_2"></a></li>
                                     <li><a href="/auth/facebook.php?auth" id="fb_2"></a></li>
@@ -85,8 +81,11 @@ $active_menu = array(' class="active"', '', '');
                                     <!-- <li><a href="/auth/google.php?auth" id="gl"></a></li> -->
                                 </ul>
                             </div>
-                            <textarea id="usertext" name="usertext" placeholder="Интересный факт о твоем городе" cols="30" rows="6" required></textarea>
+                            <textarea id="usertext" name="usertext" placeholder="Интересный факт о твоем городе (от 200 до 2000 символов)" cols="30" rows="6" required></textarea>
+				<div class="counter">Осталось <span id="counter-digits" class="digits red">2000</span> <span id="digit-text">символов</span></div>
+				<div class="counter-hide">&nbsp;</div>
                             <button type="submit" class="btn participate singup"></button>
+				<div class="text">Нажав на кнопку "Отправить" вы автоматически соглашаетесь с <a href="/rules.pdf" target="_blank">правилами участия</a> в конкурсе</div>
                         </div>
                     </form>
                 </div>
@@ -121,7 +120,30 @@ $active_menu = array(' class="active"', '', '');
 </div>
 <?php include __DIR__ . '/../menu/footer.tpl.php'; ?>
 <script>
+function declOfNum(number, titles) {  
+    cases = [2, 0, 1, 1, 1, 2];  
+    return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];  
+}
 globalshare();
+var count = 2000;
+$('#usertext').bind('focusin', function() { $(".counter-hide").hide(); $(".counter").show(); });
+$('#usertext').bind('focusout', function() {
+	if (count > 0 && count <= 1800) {	
+		$(".counter-hide").show(); $(".counter").hide();
+	}
+});
+$('#usertext').bind('input propertychange', function() {
+	var val = $(this).val();
+	count = 2000 - val.length;
+	if (count < 0 || count > 1800) {
+		$("#counter-digits").addClass("red");
+	} else {
+		$("#counter-digits").removeClass("red");
+	}
+	$("#counter-digits").html(count);
+	$("#digit-text").html(declOfNum(count, ['символ', 'символа', 'символов']));
+});
+
 var cities = [];
 $.get('/ajax/load-city-list.php', function(data) {
     var obj = $.parseJSON(data);
@@ -171,9 +193,11 @@ $('.load_photo').bind('click', function() {
     return false;
 });
 <?php if (isset($_SESSION['auth']) && isset($_SESSION['auth']['picture']) && !empty($_SESSION['auth']['picture'])) : ?>
-var current_image = 'social';
+var current_image = '';
+var social_image = '<img id="myImage" src="<?=$_SESSION['auth']['picture']?>"/>';
 <?php else : ?>
 var current_image = null;
+var social_image = null;
 <?php endif; ?>
 $(':file').change(function(){
     current_image = null;
@@ -197,17 +221,17 @@ $(':file').change(function(){
 
                     current_image = evt.target.result;
                     if (typeof current_image === 'string' && current_image.length > 0) {
-                        $(".load_photo_text").html('картинка выбрана');
-                        $(".load_photo_text").addClass('active');
+			$("#userphoto").empty();			
                         var div = document.createElement('div');
                         div.innerHTML = '<div id="myImage" style="background: url(\'' + evt.target.result + '\') no-repeat center; background-size: contain;" /></div>';
-                        $("#modal_photo").modal("show");            
-                        $("#modal_photo .modal-body").empty();
-                        document.getElementById('modal-photo').appendChild(div);
+			document.getElementById('userphoto').appendChild(div);
                     } else {
-                        $(".load_photo_text").html('картинка не выбрана');
-                        $(".load_photo_text").removeClass('active');
-                        $("#modal_photo .modal-body").empty();
+			$("#userphoto").empty();
+			if (social_image.length) {
+				var div = document.createElement('div');
+				div.innerHTML = socail_image;
+				document.getElementById('userphoto').appendChild(div);
+			}
                     }
                 }
             };
@@ -215,11 +239,10 @@ $(':file').change(function(){
         reader.readAsDataURL(file);
     } else {
         $(this).val('');
-        $(".load_photo_text").html('картинка не выбрана');
-        $(".load_photo_text").removeClass('active');
         $("#modal_photo .modal-body").empty();
     }
 });
+var formuser_trigger = false;
 $('#userform').on('submit', function() {
     var name = $('#username').val();
     var email = $('#useremail').val();
@@ -227,17 +250,16 @@ $('#userform').on('submit', function() {
     var city = $('#usercity').val();
     var text = $('#usertext').val();
     var file = current_image;
-    var rules = $('#userrules').val();
     //if (typeof file === 'string' && file.length > 0) {
-    if (document.getElementById('userrules').checked) {
+    if (true && !formuser_trigger) {
+	formuser_trigger = true;
         $.post('/ajax/create-user.php', {
                 name: name,
                 email: email,
                 password: password,
                 city: city,
                 text: text,
-                file: file,
-                rules: rules
+                file: file
             },
             function(data) {
                 var obj = $.parseJSON(data);
@@ -249,10 +271,9 @@ $('#userform').on('submit', function() {
                     $('#login_error_text').html(obj.errortext);
                     $('#modal_login_error').modal('show');
                 }
+		formuser_trigger = false;
             }
         );
-    } else {
-	alert("Вам необходимо согласиться с Правилами конкурса");
     }
     return false;
 });

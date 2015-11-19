@@ -35,18 +35,28 @@ if (!file_exists(__DIR__.'/../../'.$pic)) {
                 <a href="/logout.php"><button class="btn exit"></button></a>
 <?php endif; ?>                
             </div>            
+<?php if ($status1 == 1) : ?> 
+            <div class="col-md-6 col-sm-8">
+<?php else : ?>
             <div class="col-md-4 col-sm-8">
-                <div class="name text-left"><?=$name1?></div>
-<?php if ($status1 === 2) : ?>
-                <div class="like text-right" userid="<?=$id1?>">лайк &nbsp;<img src="img/Like.png" alt=""></div>
 <?php endif; ?>
+                <div class="name text-left"><?=$name1?></div>
                 <div class="town"><span>Город:</span> <?=$city1?></div>
                 
 <?php if (isset($_SESSION['login']) && isset($_SESSION['login']['id']) && $_SESSION['login']['id'] == $id1) : ?>
 <?php if (!empty($text1)) : ?>                
                 <div class="text">
                         <span>Интересный факт о вашем городе:</span>
+<?php if ($status1 != 1) : ?>  
                         <p><?=$text1?></p>
+<?php else : ?>
+		<div class="text">
+                    <form action="">
+                        <textarea id="usertext" name="" placeholder="Интересный факт о твоем городе" id="" cols="50" rows="6"><?=$text1?></textarea>
+                        <button class="btn send usertextsend"></button>
+                    </form>
+                </div>
+<?php endif; ?>
                 </div>
 <?php if ($status1 === 0) : ?>                
                 <div class="attantion"><img src="img/Warning.png" alt=""><p>Отправленный вами факт о вашем городе <br>находится на модерации</p></div>
@@ -92,6 +102,9 @@ if (!file_exists(__DIR__.'/../../'.$pic)) {
 <?php endif; ?>
                                 <span><img src="img/Floral_3.png" alt=""><span id="user<?=$id1?>-points"><?=$points1?></span><img src="img/Floral_4.png" alt=""></span>
                                 <p><img src="img/line_3.png"> баллов <img src="img/line_4.png"></p>
+<?php if ($status1 === 2) : ?>
+                <div class="like like_points" userid="<?=$id1?>">лайк &nbsp;<img src="img/Like2.png" alt=""></div>
+<?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-6">
@@ -109,10 +122,10 @@ if (!file_exists(__DIR__.'/../../'.$pic)) {
                                 <span>Рассказывайте о проекте друзьям 
                                 <br>на своих страницах в социальных сетях.</span>
                                 <ul>
-                                    <li><a href="" id="fb_2" class="fb-globalshare"></a></li>
-                                    <li><a href="" id="vk_2" class="vk-globalshare"></a></li>
-                                    <li><a href="" id="ok_2" class="ok-globalshare"></a></li>
-                                    <li><a href="" id="tw_2" class="tw-globalshare"></a></li>
+                                    <li><a href="" id="fb_2" class="fb-share" userid="<?=$id1?>" cityid="<?=$cityid1?>"></a></li>
+                                    <li><a href="" id="vk_2" class="vk-share" userid="<?=$id1?>" cityid="<?=$cityid1?>"></a></li>
+                                    <li><a href="" id="ok_2" class="ok-share" userid="<?=$id1?>" cityid="<?=$cityid1?>"></a></li>
+                                    <li><a href="" id="tw_2" class="tw-share" userid="<?=$id1?>" cityid="<?=$cityid1?>"></a></li>
                                 </ul>
 <?php endif; ?>
                             </div>
@@ -142,6 +155,7 @@ $query = "SELECT `user`.`id` as `id`"
         . " WHERE `user`.`id` != '%s' AND `user`.`city` = '%s'"
 	. " AND `user`.`status` = 2";
 $query .= " ORDER BY `points` DESC";
+$query .= " LIMIT 20";
 $query = sprintf($query,
         mysql_real_escape_string($id1),
         mysql_real_escape_string($cityid1));
@@ -209,8 +223,8 @@ if ($count == 0) {
 <script>
 $(".usertextsend").bind('click', function() {
     var text = $("#usertext").val();
-    if (text.length > 300) {
-        alert('Факт о городе не должен быть длинее 300 символов');
+    if (text.length > 2000) {
+        alert('Факт о городе не должен быть длинее 2000 символов');
         return false;
     } else {
         if (text.length > 0) {
@@ -218,7 +232,9 @@ $(".usertextsend").bind('click', function() {
                 var obj = $.parseJSON(data);
                 if (!obj.error) {
                     location.reload();
-                }
+                } else {
+			alert(obj.text);
+		}
             });
         }
     }

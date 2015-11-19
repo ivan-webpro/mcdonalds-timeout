@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2 col-sm-2" style="text-align: center;">
-                <img src="img/TOLogo.png" alt="">
+                <a href="http://www.timeout.ru/" target="_blank"><img src="img/TOLogo.png" alt=""></a>
                 <!-- <img src="img/McDonalds_Logo.png" class="visible-xxs" alt="" style="float: right"> -->
             </div>
             <div class="col-md-8 col-sm-8 text-center">

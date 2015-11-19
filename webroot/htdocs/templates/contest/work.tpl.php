@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-6 col-sm-6 text-center">
+<div class="col-lg-4 col-md-6 col-sm-6 text-cente">
     <div class="text-center <?=$color1?> story" userid="<?=$id?>">
 <?php
 $pic = 'upload/profile/'.$id.'.jpg';

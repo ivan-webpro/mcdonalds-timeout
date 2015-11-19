@@ -7,7 +7,7 @@ $html_styles[] = '/css/media2.css';
 $html_scripts[] = '/templates/main/js/scripts.js';
 $html_scripts[] = '/templates/main/js/slides.js';
 
-$active = array('', '', ' class="active"');
+$active_menu = array('', '', ' class="active"');
 
 $_SESSION['game'] = array();
 $_SESSION['game']['slide'] = 1;
@@ -22,7 +22,7 @@ $_SESSION['game']['answer'] = 0;
 			<div class="row">
 				<div class="col-md-12 text-center title">
 					<h2>стейк хаус классик</h2>
-					<span class="text-left">Состав</span>
+					<span class="text-left">Состав:</span>
 				</div>
 			</div>
 			<div class="row tabs_burger">
@@ -103,7 +103,7 @@ $_SESSION['game']['answer'] = 0;
 								<div class="col-md-9 col-sm-9">
 									<span>ЛУК РЕЗАНЫЙ КРАСНЫЙ</span>
 									<p>Поставщик - компания "Белая Дача" г.Котельники МО</p>
-									<p>Свежий, красный лук, богат витамином С</p>
+									<p>Свежий, красный лук, богат витамином С.</p>
 								</div>
 							</div>
 							<div class="descr row">
@@ -140,7 +140,7 @@ $_SESSION['game']['answer'] = 0;
 									<span>Полуфабрикаты мясные рубленые.</span>
 									<p>Поставщик - ООО "МАРР РУССИЯ", Одинцово</p>
 									<p>Мясная котлета состоит из 100% говядины, без каких-либо добавок и примесей. Для приготовления мясных полуфабрикатов поставщик использет только высококачественное бескостное мышечное мясо передней и задней четвертины и всегда отслеживают источники его происхождения.
-										В ресторане мясные полуфабрикаты доготавливаются в двустороннем гриле, без масла, только соль и перец после жарки..</p>
+										В ресторане мясные полуфабрикаты доготавливаются в двустороннем гриле, без масла, только соль и перец после жарки.</p>
 								</div>
 							</div>
 							<div class="descr row">
@@ -165,7 +165,7 @@ $_SESSION['game']['answer'] = 0;
 									<span>Полуфабрикаты мясные рубленые.</span>
 									<p>Поставщик - ООО "МАРР РУССИЯ", Одинцово</p>
 									<p>Мясная котлета состоит из 100% говядины, без каких-либо добавок и примесей. Для приготовления мясных полуфабрикатов поставщик использет только высококачественное бескостное мышечное мясо передней и задней четвертины и всегда отслеживают источники его происхождения.
-										В ресторане мясные полуфабрикаты доготавливаются в двустороннем гриле, без масла, только соль и перец после жарки..</p>
+										В ресторане мясные полуфабрикаты доготавливаются в двустороннем гриле, без масла, только соль и перец после жарки.</p>
 								</div>
 							</div>
 							<div class="descr row">
@@ -176,7 +176,7 @@ $_SESSION['game']['answer'] = 0;
 								<div class="col-md-9 col-sm-9">
 									<span>БЕКОН ПОРЦИОННЫЙ</span>
 									<p>Поставщик - ITALIA ALIMENTARI S.P.A, Италия</p>
-									<p>Натуральный, копченый бекон</p>
+									<p>Натуральный, копченый бекон.</p>
 								</div>
 							</div>
 							<div class="descr row">
@@ -205,7 +205,7 @@ $_SESSION['game']['answer'] = 0;
 	</section>
 <?php include __DIR__ . '/../main/burger.tpl.php'; ?>
 <?php include __DIR__ . '/../main/popups.tpl.php'; ?>
-<?php //include __DIR__ . '/../menu/footer.tpl.php'; ?>
+<?php include __DIR__ . '/../menu/footer.tpl.php'; ?>
 <?php if (isset($_SESSION['login']) && isset($_SESSION['login']['id'])) : ?>
 <script>var product = true; var start2 = <?=$_SESSION['login']['id']?>;</script>
 <?php else : ?>

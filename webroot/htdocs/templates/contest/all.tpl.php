@@ -50,7 +50,7 @@ switch($sort) {
     
     default:
         $query .= " ORDER BY `points` DESC";
-        $active = array('', '', '');
+	$active = array('', '', ' active');
         break;
 }
 $query .= " LIMIT 10";
@@ -89,7 +89,7 @@ $query .= " LIMIT 10";
                 <div class="col-md-4 col-sm-4 col-xs-6 text-right">
                     <img src="img/icon_4.png" alt="">
                     <div class="places places_2 text-left">
-                        2-21 Место<br><span>Обед в McDonalds</span>
+                        2-21 Место<br><span>Обед в Макдоналдс</span>
                     </div>
                 </div>
             </div>
@@ -97,16 +97,16 @@ $query .= " LIMIT 10";
     <div class="border">
         <div class="container">
              <div class="row">
-                 <div class="col-md-7 col-sm-8 title">
+                 <div class="col-md-8 col-sm-12 title" style="z-index:100">
                      <h2>рейтинг историй</h2>
                      <ul class="tags_filtr">
                          <li>Сортировать:</li>
+                         <li><a href="" class="rating-sort<?=$active[2]?>">По рейтингу</a></li>
                          <li><a href="" class="random-sort<?=$active[0]?>">Случайно</a></li>
                          <li><a href="" class="new-first-sort<?=$active[1]?>">Сначала новые</a></li>
-                         <li><a href="" class="rating-sort<?=$active[2]?>">По рейтингу</a></li>
                      </ul>
                  </div>
-                 <div class="col-md-5 col-sm-4 text-right">
+                 <div class="col-md-4 col-sm-15 text-right">
 <?php if(isset($_SESSION['login']) && isset($_SESSION['login']['id'])) : ?>                    
                      <a class="h_l" href="/contest.php?user=<?=$_SESSION['login']['id']?>"><button class="profileIn h_l"></button></a>
 <?php else : ?>

@@ -307,7 +307,7 @@ section {
   padding: 0; }
 
 .scores {
-  margin-bottom: 30px; }
+  /*margin-bottom: 30px;*/ }
   .scores p {
     margin: 5px 0;
     font-family: "SchistBold";
@@ -330,8 +330,8 @@ section {
   padding-bottom: 80px; }
 
 .orange {
-  padding-top: 50px;
-  padding-bottom: 45px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   background: url(../img/Orange_bg.png) no-repeat;
   background-size: cover;
   z-index: 200; }
@@ -388,10 +388,10 @@ color: #be0000;}
     background-size: 100%; }
     .orange .feedback .load_photo:hover, .orange .feedback .load_photo:focus {
       /* style */
-      background: url(../img/buttons/LoadPhotoHover_2.png) no-repeat top center; }
+      background: url(../img/buttons/LoadPhotoHover_2.png) no-repeat top center; background-size: 100%; }
   .orange .feedback .participate {
     position: absolute;
-    bottom: 0;
+/*    bottom: 0;*/
     left: 15px;
     width: 240px;
     height: 56px;
@@ -626,15 +626,15 @@ footer {
       text-decoration: none; }
       .tags_filtr li a:hover, .tags_filtr li a.active {
         background: url(../img/HeadBT.png) no-repeat center;
-        -webkit-background-size: 100%;
-        -moz-background-size: 100%;
-        background-size: 100%; }
-    .tags_filtr li:nth-child(3) a:hover, .tags_filtr li:nth-child(3) a.active {
+        -webkit-background-size: 100% 37px;
+        -moz-background-size: 100% 37px;
+        background-size: 100% 37px; }
+/*    .tags_filtr li:nth-child(3) a:hover, .tags_filtr li:nth-child(3) a.active {
       background: url(../img/bd-1.png) no-repeat center;
         background-size: 100%;}
     .tags_filtr li:nth-child(4) a:hover, .tags_filtr li:nth-child(4) a.active {
       background: url(../img/bd-2.png) no-repeat center;
-        background-size: 100%;}
+        background-size: 100%;}*/
 
 
 .search {
@@ -700,91 +700,6 @@ footer {
     color: #ffa800; }
 .prizes .places_2 {
   margin-top: 20px; }
-.story {
-  width: 100%;
-  min-height: 500px;
-  height: 500px;
-  display: inline-block;
-  padding: 10px;
-  margin: 80px 0 20px;
-  -webkit-box-shadow: 1px 1px 10px #000000;
-  -moz-box-shadow: 1px 1px 10px #000000;
-  box-shadow: 1px 1px 10px #000000; }
-  .story .author {
-    display: block;
-    margin: -58px auto 0; }
-  .story .name, .story .scores, .story .like {
-    display: inline-block; }
-  .story .scores {
-    width: 40%;
-    margin-top: 15px; }
-    .story .scores span {
-      font-size: 29px;
-      color: #FFF; }
-      .story .scores span img {
-        width: 30px;
-        margin: 0 7px; }
-    .story .scores p {
-      font-size: 14px; }
-  .story .name, .story .like {
-    width: 28%; }
-  .story .name {
-    font-family: "SchistBlack";
-    font-size: 18px; }
-  .story .like, .story .social_2 span {
-    font-family: "SchistBold";
-    text-transform: uppercase;
-    font-size: 14px; }
-    .story .like img, .story .social_2 span img {
-      vertical-align: bottom; }
-  .story h4 {
-    font-family: "SchistBold";
-    font-size: 24px;
-    text-transform: uppercase; }
-    .story h4 img {
-      margin-top: 8px;
-      width: 23%; }
-    .story h4 img, .story h4 span {
-      display: inline-block;
-      vertical-align: middle; }
-    .story h4 span {
-      width: 50%; }
-  .story .text {
-    text-align: left;
-    min-height: 180px;
-    margin-bottom: 10px;
-    -moz-border-image: url(../img/line_7.png) 5 round round;
-    -webkit-border-image: url(../img/line_7.png) 5 round round;
-    -o-border-image: url(../img/line_7.png) 5 round round;
-    border-image: url(../img/line_7.png) 5 round round;
-    border-top: 0; }
-    .story .text p {
-      font-size: 14px;
-      font-family: "Helvetica-5-Normal";
-      line-height: 1.7; }
-    .story .text img {
-      max-width: 100%; }
-  .story .social_2 span, .story .social_2 ul {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 10px; }
-  .story .social_2 span {
-    margin-top: 5px; }
-  .story .social_2 li {
-    margin-right: 10px; }
-    .story .social_2 li a {
-      width: 25px;
-      height: 25px;
-      background: url(../img/social_3.png) no-repeat; }
-    .story .social_2 li #fb_3 {
-      background-position: left 0; }
-    .story .social_2 li #vk_3 {
-      background-position: -33px 0; }
-    .story .social_2 li #ok_3 {
-      background-position: -66px 0; }
-    .story .social_2 li #tw_3 {
-      background-position: -101px 0; }
-
 .color_1 {
   background: #4c67d0; }
 
@@ -859,7 +774,7 @@ footer {
   .user_page img {
     max-width: 100%; }
   .user_page .title {
-    font-size: 40px;
+    font-size: 36px;
     font-family: "SchistBlack";
     text-transform: uppercase;
     margin-top: 30px; }
@@ -870,7 +785,7 @@ footer {
     text-transform: uppercase;
     margin-top: 60px; }
   .user_page .like {
-    float: right;
+  /*  float: right;*/
     margin-top: -30px;
     font-family: "SchistBold";
     text-transform: uppercase;
@@ -931,7 +846,7 @@ footer {
 
 .user_page_2 .user .text {
   padding-top: 30px;
-  width: 80%; }
+  width: 100%; }
   .user_page_2 .user .text p {
     margin-top: 20px;
     font-size: 14px;
@@ -951,7 +866,7 @@ footer {
     font-size: 20px;
     display: block;
     margin-top: 70px;
-    margin-bottom: -10px; }
+    margin-bottom: -25px; }
   .product .tabs_burger .burger {
     position: static;
     margin-right: -30px;
@@ -1015,3 +930,92 @@ footer {
       background: url(../img/buttons/BT_2_hover.png) no-repeat center; }
 
 /*# sourceMappingURL=style.css.map */
+.story {
+  width: 100%;
+  min-height: 500px;
+  height: 500px;
+  display: inline-block;
+  padding: 10px;
+  margin: 80px 0 20px;
+  -webkit-box-shadow: 1px 1px 10px #000000;
+  -moz-box-shadow: 1px 1px 10px #000000;
+  box-shadow: 1px 1px 10px #000000; }
+  .story .author {
+    display: block;
+    margin: -58px auto 0; }
+  .story .name, .story .scores, .story .like {
+    display: inline-block; }
+  .story .scores {
+    width: 160px;
+    margin-top: 15px; }
+    .story .scores span {
+      font-size: 29px;
+      color: #FFF; }
+      .story .scores span img {
+        width: 30px;
+        margin: 0 7px; }
+    .story .scores p {
+      font-size: 14px; }
+  .story .name {
+    width: 22%; }
+  .story .name {
+    font-family: "SchistBlack";
+    font-size: 18px; }
+  .story .like, .story .social_2 span {
+    font-family: "SchistBold";
+    text-transform: uppercase;
+    font-size: 14px; }
+    .story .like img, .story .social_2 span img {
+      vertical-align: bottom; }
+  .story h4 {
+    font-family: "SchistBold";
+    font-size: 24px;
+    text-transform: uppercase; }
+    .story h4 img {
+      margin-top: 8px;
+      width: 23%; }
+    .story h4 img, .story h4 span {
+      display: inline-block;
+      vertical-align: middle; }
+    .story h4 span {
+      width: 50%; }
+  .story .text {
+    text-align: left;
+    height: 260px;
+    margin-bottom: 10px;
+    -moz-border-image: url(../img/line_7.png) 5 round round;
+    -webkit-border-image: url(../img/line_7.png) 5 round round;
+    -o-border-image: url(../img/line_7.png) 5 round round;
+    border-image: url(../img/line_7.png) 5 round round;
+    border-top: 0; 
+overflow-y: auto; }
+
+
+.story .text p {
+      font-size: 14px;
+      font-family: "Helvetica-5-Normal";
+      line-height: 1.7; }
+    .story .text img {
+      max-width: 100%; }
+  .story .social_2 span, .story .social_2 ul {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px; }
+  .story .social_2 span {
+    margin-top: 5px; }
+  .story .social_2 li {
+    margin-right: 10px; }
+    .story .social_2 li a {
+      width: 25px;
+      height: 25px;
+      background: url(../img/social_3.png) no-repeat; }
+    .story .social_2 li #fb_3 {
+      background-position: left 0; }
+    .story .social_2 li #vk_3 {
+      background-position: -33px 0; }
+    .story .social_2 li #ok_3 {
+      background-position: -66px 0; }
+    .story .social_2 li #tw_3 {
+      background-position: -101px 0; }
+.story .social_2  {margin-top: 0; }
+
